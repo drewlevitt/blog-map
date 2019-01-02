@@ -53,29 +53,40 @@
         ];
 
         var latest = d3.max(points, function(d) { return new Date(d.date); })
-
+        
         function addMonths(date, months) {
             myDate = new Date(date);
             myDate.setMonth(myDate.getMonth() + months);
             return myDate;
         }
-
+        
         var colorScale = d3.scaleLinear()
             .domain([addMonths(latest, -1), latest]) // Fade up from the lightest value to the darkest starting a month before the latest entry
             .interpolate(d3.interpolateHcl)
             .clamp(true)
             .range([d3.rgb('#a1d99b'), d3.rgb('#00441b')]); // greens
             // .range([d3.rgb("#fc8d59"), d3.rgb('#7f0000')]); // oranges
-                
+        
         var pointsGroup = L.featureGroup();
         points.forEach(function(d){
-            L.circleMarker(d.latlng, { radius: 10, color: colorScale(new Date(d.date)), date: d.date })
-                .bindTooltip("" + d.date)
-                .addTo(pointsGroup);
+            L.circleMarker(d.latlng, { radius: 10, stroke: false, fillOpacity: 0.8, color: colorScale(new Date(d.date)), date: d.date })
+            .bindTooltip("" + d.date)
+            .addTo(pointsGroup);
         });
-
+        
+        if (points.length > 1) {
+            var lines = [], linesGroup = L.featureGroup(), i;
+            for (i = 1; i < points.length; i++) {
+                lines.push({ latlngs: [points[i - 1].latlng, points[i].latlng], date: points[i].date });
+            };
+            lines.forEach(function(d){
+                L.polyline(d.latlngs, { color: colorScale(new Date(d.date)), opacity: 0.8 }).addTo(linesGroup);
+            });
+            map.addLayer(linesGroup);
+        };
+        
         map.addLayer(pointsGroup);
         map.fitBounds(pointsGroup.getBounds().pad(0.1));
-    </script>
+        </script>
 </body>
 </html>
