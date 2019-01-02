@@ -48,7 +48,7 @@
 <body>
     <div id="left"></div>
     <div id="right">
-        <iframe src="https://www.ocf.berkeley.edu/~dlevitt/2015/12/13/final-project-nyc-taxi-and-uber-data/"></iframe>
+        <iframe src="https://www.schemebasedadventure.com/2018/12/27/this-is-not-a-test/"></iframe>
     </div>
 
     <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" 
@@ -114,10 +114,10 @@
 
             var div = L.DomUtil.create('div', 'info legend'),
                 grades = [],
-                labels = ['Older', '', '', '', 'Newer'];
+                labels = ['Newer', '', '', '', 'Older'];
 
             for (var i = 0; i < 5; i++) {
-                grades.push(new Date(addMonths(latest, -1).getTime() + (latest - addMonths(latest, -1)) * i / 4));
+                grades.push(new Date(latest.getTime() - (latest - addMonths(latest, -1)) * i / 4));
             }
 
             // loop through our density intervals and generate a label with a colored square for each interval
