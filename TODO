@@ -1,3 +1,9 @@
+highlight selected entry in a different color
+add previous/next functionality - by clicking the lines connecting to the selected point
+add a splash page on the right hand side
+add, you know, the actual functionality of having a marker click refresh the right side with the corresponding blog entry
+
+DONE
 Add legend - older to newer
 Tooltip - blog post title, date, location (?)
 d3 color features by age

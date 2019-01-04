@@ -57,9 +57,9 @@
     <!-- <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script> -->
     <script type="text/javascript" src="https://stamen-maps.a.ssl.fastly.net/js/tile.stamen.js"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="Leaflet.Geodesic.js" charset="UTF-8"></script> <!-- from https://github.com/henrythasler/Leaflet.Geodesic -->
-    <script src="svg-icon.js"></script> <!-- from https://github.com/iatkin/leaflet-svgicon -->
-    <script src="entries.js"></script> <!-- Load list of entries from external file -->
+    <script src="js/Leaflet.Geodesic.js" charset="UTF-8"></script> <!-- from https://github.com/henrythasler/Leaflet.Geodesic -->
+    <script src="js/svg-icon.js"></script> <!-- from https://github.com/iatkin/leaflet-svgicon -->
+    <script src="js/entries.js"></script> <!-- Load list of entries from external file -->
     <script>
         var map = L.map('left');//.setView([51.505, -0.09], 13);
         var watercolor = new L.StamenTileLayer("watercolor");
@@ -86,11 +86,12 @@
             var lines = [], 
                 linesGroup = L.featureGroup();
 
-            for (var i = 1; i < entries.length; i++) {
+            for (var i = 1; i < entries.length; i++) { // create a list of lines
                 lines.push({ latlngs: [entries[i - 1].latlng, entries[i].latlng], date: entries[i].date });
             };
-            lines.forEach(function(d){
-                L.geodesic([d.latlngs], { color: colorScale(new Date(d.date)), steps: 15, wrap: false, opacity: 0.8 })
+            lines.forEach(function(d) {
+                let steps = Math.ceil(L.latLng(d.latlngs[0]).distanceTo(L.latLng(d.latlngs[1])) / 400000); // one segment per 400km should be sufficient
+                L.geodesic([d.latlngs], { color: colorScale(new Date(d.date)), steps: steps, wrap: false, opacity: 0.8 })
                 .addTo(linesGroup);
             });
             map.addLayer(linesGroup);
@@ -98,17 +99,17 @@
         
         var pointsGroup = L.featureGroup();
         entries.forEach(function(d){
-            new L.Marker.SVGMarker(d.latlng, { iconOptions: { color: colorScale(new Date(d.date)), circleRatio: 0 }})
-            // L.circleMarker(d.latlng, { radius: 10, 
-            //                            stroke: false, 
-            //                            fillOpacity: 0.8, 
-            //                            color: colorScale(new Date(d.date)) })//, 
-                                    //    date: d.date })
+            new L.Marker.SVGMarker(d.latlng, { iconOptions: { color: colorScale(new Date(d.date)), circleRatio: 0, zoom: d.zoom }})
             .bindTooltip("<strong>" + d.title + "</strong><br>" + d.location + "<br>" + d.date)
             .on('click', function(e) { 
-                map.removeLayer(linesGroup);
-                map.flyTo(e.latlng, 14, { duration: 2 });
-                map.addLayer(linesGroup); 
+                let zoomDist = d.zoom - map.getZoom();
+                if(zoomDist > 5) { // Lines can get too big and cover the map during flyTo - avoid this by temporarily removing them
+                    map.removeLayer(linesGroup); 
+                    map.once('moveend', function() {
+                        map.addLayer(linesGroup); 
+                    });
+                };
+                map.flyTo(e.latlng, d.zoom, { duration: 0.5 + 0.1 * Math.abs(zoomDist) });
             })
             .addTo(pointsGroup);
         });
