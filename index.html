@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>iFrame test</title>
+        <title>When Map Met Blog&hellip;</title>
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
         integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
         crossorigin=""/>
@@ -57,22 +57,14 @@
     <!-- <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script> -->
     <script type="text/javascript" src="https://stamen-maps.a.ssl.fastly.net/js/tile.stamen.js"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
-
+    <script src="Leaflet.Geodesic.js" charset="UTF-8"></script> <!-- from https://github.com/henrythasler/Leaflet.Geodesic -->
+    <script src="entries.js"></script> <!-- Load list of entries from external file -->
     <script>
         var map = L.map('left');//.setView([51.505, -0.09], 13);
         var layer = new L.StamenTileLayer("watercolor");
         map.addLayer(layer);
 
-        var points = [
-            {latlng: [30.94110220488552, -238.14239501953122],  date: 'December 17, 1995'},
-            {latlng: [31.12819929911196, -238.24676513671875],  date: 'December 20, 1995'},
-            {latlng: [30.987027960280326, -238.46649169921875], date: 'December 25, 1995'},
-            {latlng: [31.230417393130743, -238.47747802734375], date: 'January 2, 1996'},
-            {latlng: [31.235114421248575, -238.63128662109375], date: 'January 11, 1996'},
-            {latlng: [31.340735782189476, -238.41979980468747], date: 'January 23, 1996'}
-        ];
-
-        var latest = d3.max(points, function(d) { return new Date(d.date); })
+        var latest = d3.max(entries, function(d) { return new Date(d.date); })
         
         function addMonths(date, months) {
             myDate = new Date(date);
@@ -83,35 +75,39 @@
         var colorScale = d3.scaleLinear()
             .domain([addMonths(latest, -1), latest]) // Fade up from the lightest value to the darkest starting a month before the latest entry
             .interpolate(d3.interpolateHcl)
-            .clamp(true)
+            .clamp(true) // so that older entries don't fade to an even lighter shade
             .range([d3.rgb('#a1d99b'), d3.rgb('#00441b')]); // greens
             // .range([d3.rgb("#fc8d59"), d3.rgb('#7f0000')]); // oranges
         
         var pointsGroup = L.featureGroup();
-        points.forEach(function(d){
-            L.circleMarker(d.latlng, { radius: 10, stroke: false, fillOpacity: 0.8, color: colorScale(new Date(d.date)), date: d.date })
-            .bindTooltip("" + d.date)
+        entries.forEach(function(d){
+            L.circleMarker(d.latlng, { radius: 10, 
+                                       stroke: false, 
+                                       fillOpacity: 0.8, 
+                                       color: colorScale(new Date(d.date)) })//, 
+                                    //    date: d.date })
+            .bindTooltip("<strong>" + d.title + "</strong><br>" + d.location + "<br>" + d.date)
             .addTo(pointsGroup);
         });
         
-        if (points.length > 1) {
+        if (entries.length > 1) { // If there are multiple entries, draw lines between consecutive entries
             var lines = [], linesGroup = L.featureGroup(), i;
-            for (i = 1; i < points.length; i++) {
-                lines.push({ latlngs: [points[i - 1].latlng, points[i].latlng], date: points[i].date });
+            for (i = 1; i < entries.length; i++) {
+                lines.push({ latlngs: [entries[i - 1].latlng, entries[i].latlng], date: entries[i].date });
             };
             lines.forEach(function(d){
-                L.polyline(d.latlngs, { color: colorScale(new Date(d.date)), opacity: 0.8 }).addTo(linesGroup);
+                L.geodesic([d.latlngs], { color: colorScale(new Date(d.date)), steps: 15, wrap: false, opacity: 0.8 })
+                .addTo(linesGroup);
             });
             map.addLayer(linesGroup);
         };
         
         map.addLayer(pointsGroup);
-        map.fitBounds(pointsGroup.getBounds().pad(0.1));
+        map.fitBounds(pointsGroup.getBounds());//.pad(0.1));
 
         var legend = L.control({position: 'bottomright'});
 
         legend.onAdd = function (map) {
-
             var div = L.DomUtil.create('div', 'info legend'),
                 grades = [],
                 labels = ['Newer', '', '', '', 'Older'];
