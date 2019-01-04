@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>When Map Met Blog&hellip;</title>
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
         integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
         crossorigin=""/>
         <style>
@@ -51,18 +51,21 @@
         <iframe src="https://www.schemebasedadventure.com/2018/12/27/this-is-not-a-test/"></iframe>
     </div>
 
-    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" 
-    integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" 
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+    integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
     crossorigin=""></script>
     <!-- <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script> -->
     <script type="text/javascript" src="https://stamen-maps.a.ssl.fastly.net/js/tile.stamen.js"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="Leaflet.Geodesic.js" charset="UTF-8"></script> <!-- from https://github.com/henrythasler/Leaflet.Geodesic -->
+    <script src="svg-icon.js"></script> <!-- from https://github.com/iatkin/leaflet-svgicon -->
     <script src="entries.js"></script> <!-- Load list of entries from external file -->
     <script>
         var map = L.map('left');//.setView([51.505, -0.09], 13);
-        var layer = new L.StamenTileLayer("watercolor");
-        map.addLayer(layer);
+        var watercolor = new L.StamenTileLayer("watercolor");
+        var terrain = new L.StamenTileLayer('terrain');
+        var toner = new L.StamenTileLayer('toner');
+        map.addLayer(watercolor);
 
         var latest = d3.max(entries, function(d) { return new Date(d.date); })
         
@@ -79,20 +82,11 @@
             .range([d3.rgb('#a1d99b'), d3.rgb('#00441b')]); // greens
             // .range([d3.rgb("#fc8d59"), d3.rgb('#7f0000')]); // oranges
         
-        var pointsGroup = L.featureGroup();
-        entries.forEach(function(d){
-            L.circleMarker(d.latlng, { radius: 10, 
-                                       stroke: false, 
-                                       fillOpacity: 0.8, 
-                                       color: colorScale(new Date(d.date)) })//, 
-                                    //    date: d.date })
-            .bindTooltip("<strong>" + d.title + "</strong><br>" + d.location + "<br>" + d.date)
-            .addTo(pointsGroup);
-        });
-        
         if (entries.length > 1) { // If there are multiple entries, draw lines between consecutive entries
-            var lines = [], linesGroup = L.featureGroup(), i;
-            for (i = 1; i < entries.length; i++) {
+            var lines = [], 
+                linesGroup = L.featureGroup();
+
+            for (var i = 1; i < entries.length; i++) {
                 lines.push({ latlngs: [entries[i - 1].latlng, entries[i].latlng], date: entries[i].date });
             };
             lines.forEach(function(d){
@@ -102,9 +96,33 @@
             map.addLayer(linesGroup);
         };
         
+        var pointsGroup = L.featureGroup();
+        entries.forEach(function(d){
+            new L.Marker.SVGMarker(d.latlng, { iconOptions: { color: colorScale(new Date(d.date)), circleRatio: 0 }})
+            // L.circleMarker(d.latlng, { radius: 10, 
+            //                            stroke: false, 
+            //                            fillOpacity: 0.8, 
+            //                            color: colorScale(new Date(d.date)) })//, 
+                                    //    date: d.date })
+            .bindTooltip("<strong>" + d.title + "</strong><br>" + d.location + "<br>" + d.date)
+            .on('click', function(e) { 
+                map.removeLayer(linesGroup);
+                map.flyTo(e.latlng, 14, { duration: 2 });
+                map.addLayer(linesGroup); 
+            })
+            .addTo(pointsGroup);
+        });
+        
         map.addLayer(pointsGroup);
         map.fitBounds(pointsGroup.getBounds());//.pad(0.1));
 
+        var baseMaps = {
+            'Watercolor': watercolor,
+            'Terrain': terrain,
+            'Toner': toner
+        };
+
+        L.control.layers(baseMaps).addTo(map);
         var legend = L.control({position: 'bottomright'});
 
         legend.onAdd = function (map) {
