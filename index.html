@@ -99,9 +99,12 @@
         
         var pointsGroup = L.featureGroup();
         entries.forEach(function(d){
-            new L.Marker.SVGMarker(d.latlng, { iconOptions: { color: colorScale(new Date(d.date)), circleRatio: 0, zoom: d.zoom }})
+            var marker = new L.Marker.SVGMarker(d.latlng, { iconOptions: { color: "white", fillColor: colorScale(new Date(d.date)), circleRatio: 0, zoom: d.zoom }})
             .bindTooltip("<strong>" + d.title + "</strong><br>" + d.location + "<br>" + d.date)
             .on('click', function(e) { 
+                pointsGroup.setStyle({ iconOptions: { color: "white" } });
+                marker.setStyle({ iconOptions: { color: "orange" } });
+
                 let zoomDist = d.zoom - map.getZoom();
                 if(zoomDist > 5) { // Lines can get too big and cover the map during flyTo - avoid this by temporarily removing them
                     map.removeLayer(linesGroup); 
