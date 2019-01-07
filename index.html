@@ -5,9 +5,18 @@
         integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
         crossorigin=""/>
         <style>
+            h1, h2, h3 {
+                line-height: 1.2;
+                font-family: 'Franklin Gothic Medium', Helvetica, Arial, sans-serif;
+            }
             body {
                 padding: 0;
                 margin: 0;
+                line-height: 1.6;
+                font-size: 18px;
+                color: #444;
+                background-color: #eee;
+                font-family: Georgia, 'Times New Roman', Times, serif;
             }
             iframe {
                 border: none;
@@ -24,9 +33,12 @@
             #right {
                 overflow: hidden;
             }
+            #directions {
+                margin: 10px;
+            }
             .info {
                 padding: 6px 8px;
-                font: 14px/16px Arial, Helvetica, sans-serif;
+                font: 14px/16px 'Franklin Gothic', Helvetica, Arial, sans-serif;
                 background: white;
                 background: rgba(255,255,255,0.8);
                 box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -43,18 +55,27 @@
                 margin-right: 8px;
                 opacity: 0.7;
             }
+            .leaflet-control {
+                font-family: 'Franklin Gothic', Helvetica, Arial, sans-serif;
+            }
         </style>
     </head>
 <body>
     <div id="left"></div>
     <div id="right">
-        <iframe src="https://www.schemebasedadventure.com/2018/12/27/this-is-not-a-test/"></iframe>
+        <div id="directions">
+            <h1>Drew and Sara's Blog Map</h1>
+            <p>Follow along with our travels using this map view into our <a href="https://www.schemebasedadventure.com/">blog</a>.</p>
+            <h2>How to use the map:</h2>
+            <ul>
+                <li>Pan and zoom the map to explore our travelogues.</li>
+            </ul>
+        </div>
     </div>
 
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
     integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
     crossorigin=""></script>
-    <!-- <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script> -->
     <script type="text/javascript" src="https://stamen-maps.a.ssl.fastly.net/js/tile.stamen.js"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="js/Leaflet.Geodesic.js" charset="UTF-8"></script> <!-- from https://github.com/henrythasler/Leaflet.Geodesic -->
@@ -62,13 +83,14 @@
     <script src="js/entries.js"></script> <!-- Load list of entries from external file -->
     <script>
         var map = L.map('left'),
-            watercolor = new L.StamenTileLayer("watercolor"),
+            watercolor = new L.StamenTileLayer('watercolor'),
             terrain = new L.StamenTileLayer('terrain'),
             toner = new L.StamenTileLayer('toner');
         map.addLayer(watercolor);
 
         var latest = d3.max(entries, function(d) { return new Date(d.date); }), // most recent blog entry date
-            activeID = ''; // we will populate this on marker click
+            activeID = '', // we will populate this on marker click
+            right = document.getElementById('right'); 
 
         function addMonths(date, months) {
             myDate = new Date(date);
@@ -81,7 +103,7 @@
             .interpolate(d3.interpolateHcl)
             .clamp(true) // so that older entries don't fade to an even lighter shade
             .range([d3.rgb('#a1d99b'), d3.rgb('#00441b')]); // greens
-            // .range([d3.rgb("#fc8d59"), d3.rgb('#7f0000')]); // oranges
+            // .range([d3.rgb('#fc8d59'), d3.rgb('#7f0000')]); // oranges
         
         if (entries.length > 1) { // If there are multiple entries, draw lines between consecutive entries
             var lines = [],
@@ -119,16 +141,21 @@
         
         var pointsGroup = L.featureGroup();
         entries.forEach(function(d, i) {
-            var marker = new L.Marker.SVGMarker(d.latlng, { iconOptions: { color: "white", 
+            var marker = new L.Marker.SVGMarker(d.latlng, { iconOptions: { color: '#00441b',
+                                                                           weight: 4,
+                                                                           opacity: 0, 
                                                                            fillColor: colorScale(new Date(d.date)), 
+                                                                           fillOpacity: 0.75,
                                                                            circleRatio: 0, 
                                                                            zoom: d.zoom },
                                                             uniqueID: 'id' + i })
                 .bindTooltip("<strong>" + d.title + "</strong><br>" + d.location + "<br>" + d.date)
                 .on('click', function(e) { 
+                    right.innerHTML = "<iframe src='" + d.url + "'></iframe>"; // refresh right hand side
+                    
                     activeID = e.target.options.uniqueID; // set activeID for use with lines onclick
-                    pointsGroup.setStyle({ iconOptions: { color: "white" } }); // reset all marker outlines
-                    marker.setStyle({ iconOptions: { color: "orange" } }); // highlight the clicked marker
+                    pointsGroup.setStyle({ iconOptions: { opacity: 0 } }); // reset all marker outlines
+                    marker.setStyle({ iconOptions: { opacity: 1 } }); // highlight the clicked marker
 
                     let zoomDist = d.zoom - map.getZoom();
                     if (zoomDist > 5) { // Lines can get too big and cover the map during flyTo - avoid this by temporarily removing them
@@ -137,7 +164,7 @@
                             map.addLayer(linesGroup); 
                         });
                     };
-                    if (typeof e.latlng === "undefined") { // spaghetti code because marker.fire('click') has a different event object shape
+                    if (typeof e.latlng === 'undefined') { // spaghetti code because marker.fire('click') has a different event object shape
                         map.flyTo(e.target._latlng, d.zoom, { duration: 0.5 + 0.1 * Math.abs(zoomDist) });
                     } else {
                         map.flyTo(e.latlng, d.zoom, { duration: 0.5 + 0.1 * Math.abs(zoomDist) });
@@ -163,13 +190,13 @@
                 grades = [],
                 labels = ['Newer', '', '', '', 'Older'];
 
-            for (var i = 0; i < 5; i++) {
+            for (var i = 0; i < 5; i++) { // this hard-codes in 5 swatches but that's good enough for here
                 grades.push(new Date(latest.getTime() - (latest - addMonths(latest, -1)) * i / 4));
             }
 
             // loop through our density intervals and generate a label with a colored square for each interval
             for (var i = 0; i < grades.length; i++) {
-                div.innerHTML += '<i style="background:' + colorScale(grades[i]) + '"></i> ' + labels[i] + '<br>';
+                div.innerHTML += "<i style='background:" + colorScale(grades[i]) + "'></i> " + labels[i] + "<br>";
             }
 
             return div;
