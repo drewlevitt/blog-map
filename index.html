@@ -25,6 +25,7 @@
                 height: 100%;
             }
             #left {
+                position: relative;
                 float: left;
                 width: 50%;
                 height: 100%;
@@ -33,8 +34,11 @@
             #right {
                 overflow: hidden;
             }
+            button {
+                font-family: 'Franklin Gothic', Helvetica, Arial, sans-serif;
+            }
             #directions {
-                margin: 10px;
+                margin: 20px;
             }
             .info {
                 padding: 6px 8px;
@@ -55,23 +59,14 @@
                 margin-right: 8px;
                 opacity: 0.7;
             }
-            .leaflet-control {
+            .leaflet-control-container {
                 font-family: 'Franklin Gothic', Helvetica, Arial, sans-serif;
             }
         </style>
     </head>
 <body>
     <div id="left"></div>
-    <div id="right">
-        <div id="directions">
-            <h1>Drew and Sara's Blog Map</h1>
-            <p>Follow along with our travels using this map view into our <a href="https://www.schemebasedadventure.com/">blog</a>.</p>
-            <h2>How to use the map:</h2>
-            <ul>
-                <li>Pan and zoom the map to explore our travelogues.</li>
-            </ul>
-        </div>
-    </div>
+    <div id="right"></div>
 
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
     integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
@@ -90,7 +85,30 @@
 
         var latest = d3.max(entries, function(d) { return new Date(d.date); }), // most recent blog entry date
             activeID = '', // we will populate this on marker click
-            right = document.getElementById('right'); 
+            right = document.getElementById('right'),
+            directions = `<div id="directions">
+                <h1>Drew and Sara's Blog Map</h1>
+                <p>Follow along with our travels using this map view into our <a href="https://www.schemebasedadventure.com/">blog</a>.</p>
+                <h2>How to use the map:</h2>
+                <ul>
+                    <li>Pan and zoom the map to explore our travelogues. Markers across the map correspond 
+                        to entries on our blog; more recent entries are in darker green.</li>
+                    <li>Mouse over a marker to see the title, location, and date of that blog post.</li>
+                    <li>Click a marker to open the corresponding post in this right-hand pane. This will 
+                        center the map on that marker and zoom to an extent relevant to the blog post.</li>
+                    <li>Once you have activated a marker, you can click on the lines flowing to and from 
+                        that marker to jump to the previous or next blog posts. Or click on any other marker
+                        to jump directly to that blog post.</li>
+                    <li>Use the menu in the upper-right corner of the map to switch between different map styles.</li>
+                    <li>Lost? Click the button at lower left at any time to show these directions again.
+                        (This will dismiss the currently active blog post.)</li>
+                </ul>
+                <h2>The blog itself</h2>
+                <p>Of course, you can always read our blog in a traditional blog format at 
+                    <a href="https://www.schemebasedadventure.com/">www.schemebasedadventure.com</a>.</p>
+            </div>`;
+
+        right.innerHTML = directions; // start with the directions shown
 
         function addMonths(date, months) {
             myDate = new Date(date);
@@ -121,6 +139,7 @@
                                           steps: steps, 
                                           wrap: false, 
                                           opacity: 0.8,
+                                          weight: 5,
                                           startID: d.startID,
                                           endID: d.endID })
                     .on('click', function(e) {
@@ -141,9 +160,8 @@
         
         var pointsGroup = L.featureGroup();
         entries.forEach(function(d, i) {
-            var marker = new L.Marker.SVGMarker(d.latlng, { iconOptions: { color: '#00441b',
-                                                                           weight: 4,
-                                                                           opacity: 0, 
+            var marker = new L.Marker.SVGMarker(d.latlng, { iconOptions: { color: colorScale.range()[1],
+                                                                           weight: 0,
                                                                            fillColor: colorScale(new Date(d.date)), 
                                                                            fillOpacity: 0.75,
                                                                            circleRatio: 0, 
@@ -154,8 +172,8 @@
                     right.innerHTML = "<iframe src='" + d.url + "'></iframe>"; // refresh right hand side
                     
                     activeID = e.target.options.uniqueID; // set activeID for use with lines onclick
-                    pointsGroup.setStyle({ iconOptions: { opacity: 0 } }); // reset all marker outlines
-                    marker.setStyle({ iconOptions: { opacity: 1 } }); // highlight the clicked marker
+                    pointsGroup.setStyle({ iconOptions: { weight: 0 } }); // reset all marker outlines
+                    marker.setStyle({ iconOptions: { weight: 4 } }); // highlight the clicked marker
 
                     let zoomDist = d.zoom - map.getZoom();
                     if (zoomDist > 5) { // Lines can get too big and cover the map during flyTo - avoid this by temporarily removing them
@@ -183,8 +201,20 @@
         };
 
         L.control.layers(baseMaps).addTo(map);
-        var legend = L.control({position: 'bottomright'});
+        var reset = L.control({position: 'bottomleft'});
+        reset.onAdd = function(map) {
+            var div = L.DomUtil.create('input');
+            div.type = 'button';
+            div.value = 'Show Directions';
+            div.onclick = function() {
+                pointsGroup.setStyle({ iconOptions: { weight: 0 } }); // reset all marker outlines
+                right.innerHTML = directions; // show the directions
+            };
+            return div;
+        };
+        reset.addTo(map);
 
+        var legend = L.control({position: 'bottomright'});
         legend.onAdd = function (map) {
             var div = L.DomUtil.create('div', 'info legend'),
                 grades = [],
@@ -201,7 +231,6 @@
 
             return div;
         };
-
         legend.addTo(map);
         </script>
 </body>

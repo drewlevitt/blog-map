@@ -1,5 +1,3 @@
-add a splash page on the right hand side
-add, you know, the actual functionality of having a marker click refresh the right side with the corresponding blog entry
 
 DONE
 Add legend - older to newer
@@ -7,7 +5,7 @@ Tooltip - blog post title, date, location (?)
 d3 color features by age
 highlight selected entry in a different color
 add previous/next functionality - by clicking the lines connecting to the selected point
-    OK. I've added uinqueIDs to each marker.
+    OK. I've added uniqueIDs to each marker.
     Let's first make sure we can fire clicks by uniqueID. DONE whew
     Then I think the plan is:
         Onclick of each marker, set a global variable activeID to = that marker's uniqueID
@@ -15,3 +13,6 @@ add previous/next functionality - by clicking the lines connecting to the select
         Onclick of each geodesic line, check if startID or endID matches the currently selected endID
         If so, fire a click on the marker with uniqueID corresponding to the other end
     Yes, this worked!
+add, you know, the actual functionality of having a marker click refresh the right side with the corresponding blog entry
+add a splash page on the right hand side
+add a button to show directions and clear the selected entry
