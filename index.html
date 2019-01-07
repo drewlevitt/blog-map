@@ -61,14 +61,15 @@
     <script src="js/svg-icon.js"></script> <!-- from https://github.com/iatkin/leaflet-svgicon -->
     <script src="js/entries.js"></script> <!-- Load list of entries from external file -->
     <script>
-        var map = L.map('left');//.setView([51.505, -0.09], 13);
-        var watercolor = new L.StamenTileLayer("watercolor");
-        var terrain = new L.StamenTileLayer('terrain');
-        var toner = new L.StamenTileLayer('toner');
+        var map = L.map('left'),
+            watercolor = new L.StamenTileLayer("watercolor"),
+            terrain = new L.StamenTileLayer('terrain'),
+            toner = new L.StamenTileLayer('toner');
         map.addLayer(watercolor);
 
-        var latest = d3.max(entries, function(d) { return new Date(d.date); })
-        
+        var latest = d3.max(entries, function(d) { return new Date(d.date); }), // most recent blog entry date
+            activeID = ''; // we will populate this on marker click
+
         function addMonths(date, months) {
             myDate = new Date(date);
             myDate.setMonth(myDate.getMonth() + months);
@@ -83,38 +84,66 @@
             // .range([d3.rgb("#fc8d59"), d3.rgb('#7f0000')]); // oranges
         
         if (entries.length > 1) { // If there are multiple entries, draw lines between consecutive entries
-            var lines = [], 
+            var lines = [],
                 linesGroup = L.featureGroup();
 
             for (var i = 1; i < entries.length; i++) { // create a list of lines
-                lines.push({ latlngs: [entries[i - 1].latlng, entries[i].latlng], date: entries[i].date });
+                lines.push({ latlngs: [entries[i - 1].latlng, entries[i].latlng], 
+                             date: entries[i].date, 
+                             startID: 'id' + (i - 1),
+                             endID: 'id' + i });
             };
             lines.forEach(function(d) {
                 let steps = Math.ceil(L.latLng(d.latlngs[0]).distanceTo(L.latLng(d.latlngs[1])) / 400000); // one segment per 400km should be sufficient
-                L.geodesic([d.latlngs], { color: colorScale(new Date(d.date)), steps: steps, wrap: false, opacity: 0.8 })
-                .addTo(linesGroup);
+                L.geodesic([d.latlngs], { color: colorScale(new Date(d.date)), 
+                                          steps: steps, 
+                                          wrap: false, 
+                                          opacity: 0.8,
+                                          startID: d.startID,
+                                          endID: d.endID })
+                    .on('click', function(e) {
+                        let targetID = '';
+                        if (e.target.options.startID == activeID) { targetID = e.target.options.endID; } 
+                        else if (e.target.options.endID == activeID) { targetID = e.target.options.startID; };
+
+                        pointsGroup.eachLayer(function(marker) {
+                            if (marker.options.uniqueID == targetID) {
+                                marker.fire('click');
+                            };
+                        });
+                    })
+                    .addTo(linesGroup);
             });
             map.addLayer(linesGroup);
         };
         
         var pointsGroup = L.featureGroup();
-        entries.forEach(function(d){
-            var marker = new L.Marker.SVGMarker(d.latlng, { iconOptions: { color: "white", fillColor: colorScale(new Date(d.date)), circleRatio: 0, zoom: d.zoom }})
-            .bindTooltip("<strong>" + d.title + "</strong><br>" + d.location + "<br>" + d.date)
-            .on('click', function(e) { 
-                pointsGroup.setStyle({ iconOptions: { color: "white" } });
-                marker.setStyle({ iconOptions: { color: "orange" } });
+        entries.forEach(function(d, i) {
+            var marker = new L.Marker.SVGMarker(d.latlng, { iconOptions: { color: "white", 
+                                                                           fillColor: colorScale(new Date(d.date)), 
+                                                                           circleRatio: 0, 
+                                                                           zoom: d.zoom },
+                                                            uniqueID: 'id' + i })
+                .bindTooltip("<strong>" + d.title + "</strong><br>" + d.location + "<br>" + d.date)
+                .on('click', function(e) { 
+                    activeID = e.target.options.uniqueID; // set activeID for use with lines onclick
+                    pointsGroup.setStyle({ iconOptions: { color: "white" } }); // reset all marker outlines
+                    marker.setStyle({ iconOptions: { color: "orange" } }); // highlight the clicked marker
 
-                let zoomDist = d.zoom - map.getZoom();
-                if(zoomDist > 5) { // Lines can get too big and cover the map during flyTo - avoid this by temporarily removing them
-                    map.removeLayer(linesGroup); 
-                    map.once('moveend', function() {
-                        map.addLayer(linesGroup); 
-                    });
-                };
-                map.flyTo(e.latlng, d.zoom, { duration: 0.5 + 0.1 * Math.abs(zoomDist) });
-            })
-            .addTo(pointsGroup);
+                    let zoomDist = d.zoom - map.getZoom();
+                    if (zoomDist > 5) { // Lines can get too big and cover the map during flyTo - avoid this by temporarily removing them
+                        map.removeLayer(linesGroup); 
+                        map.once('moveend', function() {
+                            map.addLayer(linesGroup); 
+                        });
+                    };
+                    if (typeof e.latlng === "undefined") { // spaghetti code because marker.fire('click') has a different event object shape
+                        map.flyTo(e.target._latlng, d.zoom, { duration: 0.5 + 0.1 * Math.abs(zoomDist) });
+                    } else {
+                        map.flyTo(e.latlng, d.zoom, { duration: 0.5 + 0.1 * Math.abs(zoomDist) });
+                    };
+                })
+                .addTo(pointsGroup);
         });
         
         map.addLayer(pointsGroup);
