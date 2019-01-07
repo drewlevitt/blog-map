@@ -88,7 +88,8 @@
             right = document.getElementById('right'),
             directions = `<div id="directions">
                 <h1>Drew and Sara's Blog Map</h1>
-                <p>Follow along with our travels using this map view into our <a href="https://www.schemebasedadventure.com/">blog</a>.</p>
+                <p>Follow along with our travels using this map view into our 
+                    <a href="https://www.schemebasedadventure.com/">blog</a>.</p>
                 <h2>How to use the map:</h2>
                 <ul>
                     <li>Pan and zoom the map to explore our travelogues. Markers across the map correspond 
@@ -117,7 +118,7 @@
         }
         
         var colorScale = d3.scaleLinear()
-            .domain([addMonths(latest, -1), latest]) // Fade up from the lightest value to the darkest starting a month before the latest entry
+            .domain([addMonths(latest, -1), latest]) // Fade up from lightest to darkest starting a month before the latest entry
             .interpolate(d3.interpolateHcl)
             .clamp(true) // so that older entries don't fade to an even lighter shade
             .range([d3.rgb('#a1d99b'), d3.rgb('#00441b')]); // greens
@@ -134,7 +135,8 @@
                              endID: 'id' + i });
             };
             lines.forEach(function(d) {
-                let steps = Math.ceil(L.latLng(d.latlngs[0]).distanceTo(L.latLng(d.latlngs[1])) / 400000); // one segment per 400km should be sufficient
+                // one segment per 400km should be sufficient
+                let steps = Math.ceil(L.latLng(d.latlngs[0]).distanceTo(L.latLng(d.latlngs[1])) / 400000); 
                 L.geodesic([d.latlngs], { color: colorScale(new Date(d.date)), 
                                           steps: steps, 
                                           wrap: false, 
@@ -175,18 +177,20 @@
                     pointsGroup.setStyle({ iconOptions: { weight: 0 } }); // reset all marker outlines
                     marker.setStyle({ iconOptions: { weight: 4 } }); // highlight the clicked marker
 
+                    // Lines can get too big and cover the map during flyTo - avoid this by temporarily removing them
                     let zoomDist = d.zoom - map.getZoom();
-                    if (zoomDist > 5) { // Lines can get too big and cover the map during flyTo - avoid this by temporarily removing them
+                    if (zoomDist > 5) {
                         map.removeLayer(linesGroup); 
                         map.once('moveend', function() {
                             map.addLayer(linesGroup); 
                         });
                     };
-                    if (typeof e.latlng === 'undefined') { // spaghetti code because marker.fire('click') has a different event object shape
-                        map.flyTo(e.target._latlng, d.zoom, { duration: 0.5 + 0.1 * Math.abs(zoomDist) });
-                    } else {
-                        map.flyTo(e.latlng, d.zoom, { duration: 0.5 + 0.1 * Math.abs(zoomDist) });
-                    };
+
+                    // spaghetti code because marker.fire('click') has a different event object shape
+                    if (typeof e.latlng === 'undefined') { var dest = e.target._latlng; } 
+                    else { var dest = e.latlng; };
+                    map.flyTo(dest, d.zoom); // turns out default flyTo duration calculation was better
+                    // map.flyTo(dest, d.zoom, { duration: 0.5 + 0.1 * Math.abs(zoomDist) });
                 })
                 .addTo(pointsGroup);
         });

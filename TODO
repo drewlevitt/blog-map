@@ -16,3 +16,5 @@ add previous/next functionality - by clicking the lines connecting to the select
 add, you know, the actual functionality of having a marker click refresh the right side with the corresponding blog entry
 add a splash page on the right hand side
 add a button to show directions and clear the selected entry
+If the pan is longer than X distance, even if the zoom doesn't change, take somewhat longer
+    "Fixed" by simply reverting to default flyTo duration calculation
