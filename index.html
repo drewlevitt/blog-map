@@ -71,16 +71,31 @@
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
     integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
     crossorigin=""></script>
-    <script type="text/javascript" src="https://stamen-maps.a.ssl.fastly.net/js/tile.stamen.js"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="js/Leaflet.Geodesic.js" charset="UTF-8"></script> <!-- from https://github.com/henrythasler/Leaflet.Geodesic -->
     <script src="js/svg-icon.js"></script> <!-- from https://github.com/iatkin/leaflet-svgicon -->
     <script src="js/entries.js"></script> <!-- Load list of entries from external file -->
     <script>
-        var map = L.map('left'),
-            watercolor = new L.StamenTileLayer('watercolor'),
-            terrain = new L.StamenTileLayer('terrain'),
-            toner = new L.StamenTileLayer('toner');
+        var map = L.map('left');
+        var watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
+            attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+            subdomains: 'abcd',
+            minZoom: 1,
+            maxZoom: 16,
+            ext: 'jpg'
+        });
+        var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        });
+        var satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+        });
+        var spinal = L.tileLayer('https://{s}.tile.thunderforest.com/spinal-map/{z}/{x}/{y}.png?apikey={apikey}', {
+            attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+            apikey: '64ffd19e0e114a89aea336971c4d558e', // be cool folks
+            maxZoom: 22
+        });
         map.addLayer(watercolor);
 
         var latest = d3.max(entries, function(d) { return new Date(d.date); }), // most recent blog entry date
@@ -200,8 +215,9 @@
 
         var baseMaps = {
             'Watercolor': watercolor,
-            'Terrain': terrain,
-            'Toner': toner
+            'OpenStreetMap': osm,
+            'Satellite': satellite,
+            'Spinal Map': spinal
         };
 
         L.control.layers(baseMaps).addTo(map);
