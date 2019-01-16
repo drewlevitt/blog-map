@@ -181,9 +181,9 @@
                                                                            weight: 0,
                                                                            fillColor: colorScale(new Date(d.date)), 
                                                                            fillOpacity: 0.75,
-                                                                           circleRatio: 0, 
-                                                                           zoom: d.zoom },
-                                                            uniqueID: 'id' + i })
+                                                                           circleRatio: 0 },
+                                                            uniqueID: 'id' + i,
+                                                            bounds: L.latLngBounds(L.latLng(d.corner1), L.latLng(d.corner2)) })
                 .bindTooltip("<strong>" + d.title + "</strong><br>" + d.location + "<br>" + d.date)
                 .on('click', function(e) { 
                     right.innerHTML = "<iframe src='" + d.url + "'></iframe>"; // refresh right hand side
@@ -193,7 +193,7 @@
                     marker.setStyle({ iconOptions: { weight: 4 } }); // highlight the clicked marker
 
                     // Lines can get too big and cover the map during flyTo - avoid this by temporarily removing them
-                    let zoomDist = d.zoom - map.getZoom();
+                    let zoomDist = map.getBoundsZoom(e.target.options.bounds) - map.getZoom();
                     if (zoomDist > 5) {
                         map.removeLayer(linesGroup); 
                         map.once('moveend', function() {
@@ -202,9 +202,9 @@
                     };
 
                     // spaghetti code because marker.fire('click') has a different event object shape
-                    if (typeof e.latlng === 'undefined') { var dest = e.target._latlng; } 
-                    else { var dest = e.latlng; };
-                    map.flyTo(dest, d.zoom); // turns out default flyTo duration calculation was better
+                    // if (typeof e.bounds === 'undefined') { var dest = e.target._latlng; } 
+                    // else { var dest = e.bounds; };
+                    map.flyToBounds(e.target.options.bounds); // turns out default flyTo duration calculation was better
                     // map.flyTo(dest, d.zoom, { duration: 0.5 + 0.1 * Math.abs(zoomDist) });
                 })
                 .addTo(pointsGroup);
