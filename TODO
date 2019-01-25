@@ -1,4 +1,3 @@
-add a favicon
 
 DONE
 Add legend - older to newer
@@ -20,3 +19,4 @@ add a button to show directions and clear the selected entry
 If the pan is longer than X distance, even if the zoom doesn't change, take somewhat longer
     "Fixed" by simply reverting to default flyTo duration calculation
 add a "no entry" boilerplate page
+add a favicon
