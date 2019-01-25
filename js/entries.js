@@ -12,5 +12,19 @@ var entries = [
      location: 'San Francisco, CA, USA', 
      url: 'https://www.schemebasedadventure.com/2019/01/17/tomorrow-to-fresh-woods-and-pastures-new/', 
      corner1: [37.710129, -122.507835], 
-     corner2: [37.807414, -122.385118] }
+     corner2: [37.807414, -122.385118] },
+    {latlng: [37.617948, -122.391691], 
+     date: 'January 23, 2019', 
+     title: 'We made it! (?)', 
+     location: 'SFO, San Francisco, CA, USA', 
+     url: 'https://www.schemebasedadventure.com/2019/01/23/we-made-it/', 
+     corner1: [37.604199, -122.410133], 
+     corner2: [37.633354, -122.356803] }
+    // {latlng: [], 
+    //  date: '', 
+    //  title: '', 
+    //  location: '', 
+    //  url: '', 
+    //  corner1: [], 
+    //  corner2: [] }
 ];
