@@ -75,6 +75,7 @@
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="js/Leaflet.Geodesic.js" charset="UTF-8"></script> <!-- from https://github.com/henrythasler/Leaflet.Geodesic -->
     <script src="js/svg-icon.js"></script> <!-- from https://github.com/iatkin/leaflet-svgicon -->
+    <script src="js/Polyline.encoded.js"></script> <!-- from https://github.com/jieter/Leaflet.encoded -->
     <script src="js/entries.js"></script> <!-- Load list of entries from external file -->
     <script>
         var map = L.map('left');
@@ -154,7 +155,12 @@
                 linesGroup = L.featureGroup();
 
             for (var i = 1; i < entries.length; i++) { // create a list of lines
-                lines.push({ latlngs: [entries[i - 1].latlng, entries[i].latlng], 
+                if (entries[i].line.length > 0) { // use the driving polyline if available
+                    var line = L.PolylineUtil.decode(entries[i].line);
+                } else { // or fall back to a crow-flies OD pair
+                    var line = [entries[i - 1].latlng, entries[i].latlng];
+                };
+                lines.push({ latlngs: line, 
                              date: entries[i].date, 
                              startID: 'id' + (i - 1),
                              endID: 'id' + i });
@@ -165,7 +171,7 @@
                 L.geodesic([d.latlngs], { color: colorScale(new Date(d.date)), 
                                           steps: steps, 
                                           wrap: false, 
-                                          opacity: 0.8,
+                                          opacity: 0.75,
                                           weight: 5,
                                           startID: d.startID,
                                           endID: d.endID })
@@ -211,11 +217,7 @@
                         });
                     };
 
-                    // spaghetti code because marker.fire('click') has a different event object shape
-                    // if (typeof e.bounds === 'undefined') { var dest = e.target._latlng; } 
-                    // else { var dest = e.bounds; };
-                    map.flyToBounds(e.target.options.bounds); // turns out default flyTo duration calculation was better
-                    // map.flyTo(dest, d.zoom, { duration: 0.5 + 0.1 * Math.abs(zoomDist) });
+                    map.flyToBounds(e.target.options.bounds);
                 })
                 .addTo(pointsGroup);
         });
