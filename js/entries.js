@@ -19,7 +19,14 @@ var entries = [
      location: 'SFO, San Francisco, CA, USA',
      url: 'https://www.schemebasedadventure.com/2019/01/23/we-made-it/',
      corner1: [37.604199, -122.410133],
-     corner2: [37.633354, -122.356803] }
+     corner2: [37.633354, -122.356803] },
+    {latlng: [10.423455, -75.544804],
+     date: 'January 28, 2019',
+     title: 'Cartagena de Indias',
+     location: 'Cartagena, Bol&iacute;var, Colombia',
+     url: 'https://www.schemebasedadventure.com/2019/01/28/cartagena-de-indias/',
+     corner1: [10.412783, -75.528361],
+     corner2: [10.431804, -75.555225] }
     // {latlng: [],
     //  date: '',
     //  title: '',
