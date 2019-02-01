@@ -23,6 +23,14 @@ var entries = [
      corner1: [37.604199, -122.410133],
      corner2: [37.633354, -122.356803],
      line: "crjeFzogjVKwE`DO?O`EOlAGBRNYBW`GgMDKLKJEb@IJ@l@UN?`Bb@LDBDFGnEsE`@i@JWFWXs@ZYH[VmGDaAv@P`@JPHRNDYVi@f@w@h@c@\\IB@F@Lv@Vr@Zd@r@j@^N^D`BHj@H?B?F@DHDHG@A^RTFPANCVQRMBZJh@Xz@V`@f@ZZFZBd@BFcB?aCEiEGcCOcDSqCa@uDKe@MyAIuBA{ABqAEa@?IAQDcGA{@IaBEs@EOOUQuBc@wCWmAOg@Ao@CSYaA{AiF{EcP]cBM{AEgA@{@H}ALcA\\aBj@{A^u@z@gAlAeAtBgAzBeATUfAe@v@YfA[fCi@tE_AhHiBn@@h@S`@MlIcCbGeBnEuAfCw@~Cy@bFkAzNgCbE}@nA_@hAc@rAo@|ByAdHuFn@a@xAu@bBs@x@WtBe@|B]`TuCpJkArDi@~WsD|eA_Opj@yHzNyBlBSrAGtCAfAD`BJnAPfARnBf@zBr@xBx@nBx@xBbAbEzBdC|AvDpCzBhBvBpBpP|O|ErEjBrBhB`ChA~AfAfBp@jAnMnUx@nAfApAz@~@dA~@|B|AtAt@dEdBnDzA|CjAdCp@zAVlCX~AFhB@|GWtGW`CK`a@{AfPs@~BSbCYfBa@~Cy@dCy@lBw@pASdCs@xBo@`ASd@GXMFAPEvGk@x@G`Da@hJ}@tNeAhFg@zB]dB[zDkAxEyAfHsBjKgCjI}AdB_@dD{@R@PAnHuB|GoBh@Sb@Wr@o@\\e@`@w@Ng@TkAFe@AS?}@GqAUoCYoC_@_Bu@{CgAqFMo@YoCCg@B[N[RMXIt@Qn@hEpAfIc@?g@@}GnBQJMNGHY]uB{M" },
+    {latlng: [10.425416, -75.546079],
+     date: 'January 25, 2019',
+     title: 'Old City, New BRT: Notes on Transcaribe',
+     location: 'Cartagena, Bol&iacute;var, Colombia',
+     url: 'https://www.schemebasedadventure.com/2019/01/25/old-city-new-brt-notes-on-transcaribe/',
+     corner1: [10.433460, -75.554840],
+     corner2: [10.392480, -75.470035],
+     line: '' },
     {latlng: [10.423455, -75.544804],
      date: 'January 28, 2019',
      title: 'Cartagena de Indias',
@@ -30,7 +38,7 @@ var entries = [
      url: 'https://www.schemebasedadventure.com/2019/01/28/cartagena-de-indias/',
      corner1: [10.412783, -75.528361],
      corner2: [10.431804, -75.555225],
-     line: '' }
+     line: "ehs~@`ablMMDY@VtBXrBu@Pu@Na@}Bs@_FS_BG?s@EO@sCp@EOUe@FAd@GzDsAl@QHAb@Jp@ZNBP?zAe@tF_B`@KrB[RbB\\vA" }
     // {latlng: [],
     //  date: '',
     //  title: '',
