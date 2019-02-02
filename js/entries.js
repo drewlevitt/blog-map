@@ -38,7 +38,15 @@ var entries = [
      url: 'https://www.schemebasedadventure.com/2019/01/28/cartagena-de-indias/',
      corner1: [10.412783, -75.528361],
      corner2: [10.431804, -75.555225],
-     line: "ehs~@`ablMMDY@VtBXrBu@Pu@Na@}Bs@_FS_BG?s@EO@sCp@EOUe@FAd@GzDsAl@QHAb@Jp@ZNBP?zAe@tF_B`@KrB[RbB\\vA" }
+     line: "ehs~@`ablMMDY@VtBXrBu@Pu@Na@}Bs@_FS_BG?s@EO@sCp@EOUe@FAd@GzDsAl@QHAb@Jp@ZNBP?zAe@tF_B`@KrB[RbB\\vA" },
+    {latlng: [11.268952, -73.838061],
+     date: 'February 1, 2019',
+     title: 'Glimpses of Coste&ntilde;o Beach',
+     location: 'Guachaca, Magdalena, Colombia',
+     url: 'https://www.schemebasedadventure.com/2019/02/01/glimpses-of-costeno-beach/',
+     corner1: [11.340159, -74.270697],
+     corner2: [10.368081, -73.220783],
+     line: "yxr~@vyalMsBlD}AwF~CqBdEgK`GiHkHvIo@tHsTtC{RYcUkV{IkR}JoJoVuj@a\\a]kgA{vAum@er@op@ay@o{Ay_AsyCweAk|Acg@wtBma@{g@cJ_~@iYkr@sFce@yGy_B_KoaA}SmMIaOrN_k@d_@_XeDgR_TqM{f@i_@swAik@kcAmSw}@uYoZcz@me@qReq@lL_r@yPufA_Kcq@JidAcG{]_LqKqm@}a@sZob@aGwk@__AygBwkAiyBse@_o@{j@i\\giBwt@sb@gSaa@gRcJ}PwMwWcpAqm@q_AiqAuVk_BkMk|@iNw]a\\_l@oOoXuSwQ}hA{XyScPu`@as@}YkVezAmiAuRy{@wJqWwOcG_bAc]mK}YoNmYwm@mT{X}f@{@q`A_b@ssAwv@gjAm^yaAmg@{g@}WinAmNqbAei@ik@kZc\\kSaImg@qLoWa\\op@kKso@nR}QJac@wYiFo`AgOuUgRuJ}l@^mc@sUod@oj@dCevAdDo}A}Dwz@qRae@mo@{Ukg@kFig@fEaWkCuMqL_MagAwj@woAuNkYeH_i@yQiyCsTkmDnE_\\xW}i@jLoC`b@vFlWoGddB_^xr@Nb{@bMneAeOhr@qMzd@nAzk@f@pWaQnb@_iAbHu`@iCqmAiFyy@k]_j@cPgPuq@eXsu@iVgAeJoBgR}JuRrCeO^ebA_Ny_@{ZcQkm@mh@q^_Tul@}X{_@}g@ws@}jCcw@i~@yf@gx@rGulAcF__BuVwj@eOc{@yGim@xEirAbCyc@|Suh@hq@_q@zC_g@tKs]|Mcy@fe@ceDgKur@fk@}bC`eA{pK|JogA{F}l@mCm~AnFcyAcA_rBfO{zAcj@yxEcMkoB{MoaAg^chAoXqnAga@au@ik@ilA{Tca@D_u@bIaiB|CggBcsAuZmq@qj@{]}J_fA}GktAzOguAzc@soAnLiPmAsb@pBgwA_AmxEgCkgA_Re{AsKak@yO_c@mn@sN}Nyh@w@ca@gNgJoOsR}c@ys@}t@}Ng`@{Yga@qm@m\\sMoBoUyv@cc@sr@cHg_@wY{h@_{@}qAs`@cs@s_@ad@mZaRoMkW{TuVZwItCqWrGeKeIaMSkPrG{HpCwJ}NwSr@qVqLkf@cNkGwD_SnLeR}KoMqMad@mFydA_a@cdCyIgj@Lq^a@arAdL{gBlTqj@_Iw_A|U_h@yAsa@uHqa@hCqW|GmoAcUi\\_Emd@cNww@eYgVsQuXjlAyjC`Ywf@zXoBfJsMdJkSY{NqWq@wJaBO_c@bGg^tN{`@" }
     // {latlng: [],
     //  date: '',
     //  title: '',
