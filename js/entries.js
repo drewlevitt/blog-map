@@ -51,7 +51,7 @@ var entries = [
      date: 'February 5, 2019',
      title: 'Sh*t happens, or: Bogot&aacute; Part 1',
      location: 'La Candelaria, Bogot&aacute;, Distrito Capital, Colombia',
-     url: '',
+     url: 'https://www.schemebasedadventure.com/2019/02/05/sht-happens-or-bogota-part-1/',
      corner1: [4.618136, -74.086144],
      corner2: [4.593483, -74.064933],
      line: '' }
