@@ -62,7 +62,15 @@ var entries = [
      url: 'https://www.schemebasedadventure.com/2019/02/06/an-entire-blog-post-dedicated-to-just-one-urban-park/',
      corner1: [4.626781, -74.066826],
      corner2: [4.619964, -74.056696],
-     line: "cu`[pebcM}DlHmDkBdBeD|@cBv@yAkAo@gGeDaEyBoA}@wB_Ag@UIUa@u@w@iAm@u@y@k@iBy@KIIDONe@p@YTa@NQLE?I@a@W_@Mo@M}DcBqEoBkAa@qCc@u@KWGWMi@YWAs@@e@B{@N]JWN]X_@n@QPsAfCw@dBi@rAu@rAm@x@iAjAYXQDMDcAf@WNYGiFe@}F]}Be@qA[qA]oBc@cAKq@Y]EeASmFy@iBSs@SmFiBsCeAc@K{DgAwCo@gDi@" }
+     line: "cu`[pebcM}DlHmDkBdBeD|@cBv@yAkAo@gGeDaEyBoA}@wB_Ag@UIUa@u@w@iAm@u@y@k@iBy@KIIDONe@p@YTa@NQLE?I@a@W_@Mo@M}DcBqEoBkAa@qCc@u@KWGWMi@YWAs@@e@B{@N]JWN]X_@n@QPsAfCw@dBi@rAu@rAm@x@iAjAYXQDMDcAf@WNYGiFe@}F]}Be@qA[qA]oBc@cAKq@Y]EeASmFy@iBSs@SmFiBsCeAc@K{DgAwCo@gDi@" },
+    {latlng: [4.661467, -74.060913],
+     date: 'February 10, 2019',
+     title: 'Ten things we learned in Bogot&aacute;',
+     location: 'Chapinero, Bogot&aacute;, Distrito Capital, Colombia',
+     url: 'https://www.schemebasedadventure.com/2019/02/10/ten-things-we-learned-in-bogota/',
+     corner1: [4.700212, -74.026903],
+     corner2: [4.594948, -74.086740],
+     line: "sbf[x`acMuIsAsDk@}OgCsBc@}EmAwA]cEs@m@ImBEmHKmCEcDUyAQ}Fw@{HoAgIwA}UiEmAWYKsB`EcBzDmAhDq@zCKh@aCWmC[uEc@qLqA}Ek@m@I_Bm@oBu@_CiAkD}AoA[gKkAyLaAyHu@l@}@PY" }
     // {latlng: [],
     //  date: '',
     //  title: '',
