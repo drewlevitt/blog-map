@@ -70,7 +70,15 @@ var entries = [
      url: 'https://www.schemebasedadventure.com/2019/02/10/ten-things-we-learned-in-bogota/',
      corner1: [4.700212, -74.026903],
      corner2: [4.594948, -74.086740],
-     line: "sbf[x`acMuIsAsDk@}OgCsBc@}EmAwA]cEs@m@ImBEmHKmCEcDUyAQ}Fw@{HoAgIwA}UiEmAWYKsB`EcBzDmAhDq@zCKh@aCWmC[uEc@qLqA}Ek@m@I_Bm@oBu@_CiAkD}AoA[gKkAyLaAyHu@l@}@PY" }
+     line: "sbf[x`acMuIsAsDk@}OgCsBc@}EmAwA]cEs@m@ImBEmHKmCEcDUyAQ}Fw@{HoAgIwA}UiEmAWYKsB`EcBzDmAhDq@zCKh@aCWmC[uEc@qLqA}Ek@m@I_Bm@oBu@_CiAkD}AoA[gKkAyLaAyHu@l@}@PY" },
+    {latlng: [6.244136, -75.584366],
+     date: 'February 20, 2019',
+     title: 'How We Did It (or: The World Is a Smaller Place Now)',
+     location: 'Medell&iacute;n, Antioquia, Colombia',
+     url: 'https://www.schemebasedadventure.com/2019/02/20/how-we-did-it-or-the-world-is-a-smaller-place-now/',
+     corner1: [6.238715, -75.600106],
+     corner2: [6.250379, -75.578060],
+     line: '' }
     // {latlng: [],
     //  date: '',
     //  title: '',
