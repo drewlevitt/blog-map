@@ -71,6 +71,14 @@ var entries = [
      corner1: [4.700212, -74.026903],
      corner2: [4.594948, -74.086740],
      line: "sbf[x`acMuIsAsDk@}OgCsBc@}EmAwA]cEs@m@ImBEmHKmCEcDUyAQ}Fw@{HoAgIwA}UiEmAWYKsB`EcBzDmAhDq@zCKh@aCWmC[uEc@qLqA}Ek@m@I_Bm@oBu@_CiAkD}AoA[gKkAyLaAyHu@l@}@PY" },
+    {latlng: [4.641356, -75.577945],
+     date: 'February 14, 2019',
+     title: 'Home in Salento',
+     location: 'Salento, Quindio, Colombia',
+     url: 'https://www.schemebasedadventure.com/2019/02/14/home-in-salento/',
+     corner1: [4.630317, -75.580945],
+     corner2: [4.644788, -75.563751],
+     line: '' },
     {latlng: [6.244136, -75.584366],
      date: 'February 20, 2019',
      title: 'How We Did It (or: The World Is a Smaller Place Now)',
@@ -78,7 +86,7 @@ var entries = [
      url: 'https://www.schemebasedadventure.com/2019/02/20/how-we-did-it-or-the-world-is-a-smaller-place-now/',
      corner1: [6.238715, -75.600106],
      corner2: [6.250379, -75.578060],
-     line: '' }
+     line: '' } // replace with a polyline once the Cocora post is up
     // {latlng: [],
     //  date: '',
     //  title: '',
