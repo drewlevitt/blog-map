@@ -91,7 +91,7 @@ var entries = [
      date: 'February 17, 2019',
      title: 'Multimodal Medell&iacute;n',
      location: 'Medell&iacute;n, Antioquia, Colombia',
-     url: 'no-entry.html', // replace with link when post goes live
+     url: 'https://www.schemebasedadventure.com/2019/02/17/multimodal-medellin/',
      corner1: [6.200864, -75.609165],
      corner2: [6.306383, -75.497809],
      line: "u{h[hmvkMt]zaAuI~tAsYzkBqJvpAnJjX}In`A_Adz@gHhPbJ~IkA|HmMhF`GEyBvR|Ibg@wJzL`JpRxMtIqNj@eWq@w`@b@mZ|XjGrLuGrSyKzELiF{LqTo`@d@iaA~YkgAff@y^xAqBqQmh@pLeOqL}G~NyS|@sFiPuOjT|Hl^eNlH}XfH{B|c@mq@hh@e^jv@qi@`p@aK~{@uf@b~@g\\tDy`A~jBgs@dp@i}@vR{Wp]}JgBn@sMyQcAyE{B{i@~EefA{MoW{D\\{M{gAu`@u_AyYyhAkt@{t@kdA_HoWq]kWvE_q@lVbTlAoKOub@PfH_F_`@coAoWcy@vEqn@cb@oeA{DwcAoHq^jEqw@oCgdBiYibBeVqx@mCybAfLsdA{D{iAgi@wG_}@rGaPmPcIkbBcZiZQoItTqt@rIk|@oBaSvDwYgOwYj^sfAh~@eI|j@oa@pLcJ`o@rL`v@ma@`r@cjAdf@ib@aIiW|L}v@Hs^rGiAnc@m_@`l@yy@vOunBbVmh@sLanA_dAe\\cN}QjJwZ_Cw]^k^yRa[q_@yj@uOyToj@ur@sE{`A~Kub@wRuD|U{k@hQk[b]}h@LsbBzq@}|@rAoa@j]~VjByd@xUky@_XqeAgh@{z@a[qFmf@|Eom@gr@mPew@lHum@X_u@e_@qDod@w[mVga@gXalCud@qWuEy\\ib@qvA_k@uyBuV}~Aga@a}AsXkg@yOml@_DogCaQmWiPs\\jJaqA`Oqz@jBm_@ye@_PoYik@iFg{A|Iyf@|^_hDOctAtSmfCbXu}AnR_X[kT|_@mh@oG{s@Tos@_n@q^gw@e[aEgSbS_RrjAc`@heAet@ScrBaEid@aMaUzRiZdDcq@dAma@q@}m@rb@io@Dac@xU_\\gK{RuV_^iA{p@lGo~@uEytAuSw]cHvDwZdA{L}Pl@oMyFwi@kEkb@}ByRlE_PuI{\\dFyZ_Hh@yc@yOzEyQcPdDcP_OaOuQvPqg@o_@`FsVu]_Eap@aEjDkXbXw[tM}GyIoSoo@b[wJoCeEtNwYtVcVtDoNvP{[~Qwd@_@_t@tBuLpKuw@fC{cA`W_`AbGsl@bZerAb@em@fKql@j\\_k@re@}g@dUc^xW{FxIT~Qci@pK}j@`PmqAbLqd@fRmw@zGm_@hT}pAxa@soA@kn@vUud@mA}bAwQeuAzOsTtHyS_Fuw@H?{SmYwFoqAzIau@fHwt@N{VyEii@gjBoYsw@m|@{d@eaAc~@wcAql@wjBuUo\\}BpOaD_Ev[}Pv_@hH~Q}AyG" },
