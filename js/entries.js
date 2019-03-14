@@ -102,7 +102,15 @@ var entries = [
      url: 'https://www.schemebasedadventure.com/2019/02/20/how-we-did-it-or-the-world-is-a-smaller-place-now/',
      corner1: [6.238715, -75.600106],
      corner2: [6.250379, -75.578060],
-     line: "}c}d@hgjlMwBUOBMNIh@GfAFPJDf@FpAHLFFHDL?NALILQLSDgBu@_@SOOK[CU?QBU\\iCJiAB}AZq@VEf@OPIp@c@DMB_@G]WUQE]Bq@XYL_@CaCUqAg@KSII[IQ@OFGFw@?q@Ge@SmBeAkIyAuDu@wAYuAOiCc@aCHsA@sCe@_HkAoHqAyAWs@Eo@C{GDcABmCC{@Cc@DeA?qHI_HIiD@g@DaB^{B^wAHiFJ}KVmGLkELs@JiA^{@\\IDJJhCfCj@h@RQr@u@" }
+     line: "}c}d@hgjlMwBUOBMNIh@GfAFPJDf@FpAHLFFHDL?NALILQLSDgBu@_@SOOK[CU?QBU\\iCJiAB}AZq@VEf@OPIp@c@DMB_@G]WUQE]Bq@XYL_@CaCUqAg@KSII[IQ@OFGFw@?q@Ge@SmBeAkIyAuDu@wAYuAOiCc@aCHsA@sCe@_HkAoHqAyAWs@Eo@C{GDcABmCC{@Cc@DeA?qHI_HIiD@g@DaB^{B^wAHiFJ}KVmGLkELs@JiA^{@\\IDJJhCfCj@h@RQr@u@" },
+    {latlng: [-0.216652, -78.505795],
+     date: 'March 3, 2019',
+     title: 'Guest Post: We\'ll Always Have Quito',
+     location: 'Quito, Pichincha, Ecuador',
+     url: 'https://www.schemebasedadventure.com/2019/03/03/guest-post-well-always-have-quito/',
+     corner1: [-0.240297, -78.531921],
+     corner2: [-0.180808, -78.466502],
+     line: '' }
     // {latlng: [],
     //  date: '',
     //  title: '',
