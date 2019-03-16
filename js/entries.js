@@ -110,7 +110,15 @@ var entries = [
      url: 'https://www.schemebasedadventure.com/2019/03/03/guest-post-well-always-have-quito/',
      corner1: [-0.240297, -78.531921],
      corner2: [-0.180808, -78.466502],
-     line: '' }
+     line: '' },
+    {latlng: [-0.802093, -78.921375],
+     date: 'March 4, 2019',
+     title: 'Chugchil&aacute;n',
+     location: 'Chugchil&aacute;n, Cotopaxi, Ecuador',
+     url: 'https://www.schemebasedadventure.com/2019/03/04/chugchilan/',
+     corner1: [-0.961115, -78.594512],
+     corner2: [-0.658243, -78.960385],
+     line: "`ii@fdd~MeGbCiCeO|J~Dx]rVxTwI|YRjEsE|MkLzDoBkKkV}Ve]sCkWiBgK`KuQhc@uG|OvIaCpIeVdFwFlSvHtEpJuN~ImD|^n_@tE~[lXzH~XfMfSrA|]oFtVlNrJpJjWdAl^vOxe@~a@fe@~Rbi@dDdxBtN~v@gHbb@wIvbA~Gfb@nNni@IvQhAzKfMxVfw@ln@we@dhBnTr\\rKzh@fN|GzO~TxLzH|OtSbNfoApS`j@tJty@~F~u@lObr@pYpv@vb@ln@PpaB|RvyA`SjqCta@pmCnk@x_Cdd@ll@lUp_@vd@l[t`@re@wHrE{QpMKnNxDdeA{E~m@uAnRmZ`\\oDbv@pEt`BuJzeB{VhNmElAaPxJmPjq@nQtPmWjHiDvfCtq@|qBbkAfk@j]bv@vQtVbSj_@`L`MtA~CnDfQQ|Sv^dNrHjOnH~Jr`@vCpf@l@jw@k@hU`Etn@rExVqHlRaOtc@X`YgIvVZhOkHjS{H`j@pN|WqKj[iSvVMfBoN`y@Ypu@~F~FlJvJ~GzKqAfW`Et`@sXjf@az@ntAoWiAoc@}JqQ\\_BzDqDwEaKVxGlG`GdP}ArJiIvPqB_Gmg@vNyQt@mL_F{FbCc@nDiFpCeAzGhEzHgRzD|EjLkRmB{D}BxF`IhJxLfP|FhDlSsFlDzAxUtBxUmDpe@sRxd@eB|NuCeG}@zFuBhKoBrCb@{YgOrWp@`NuBpBuAqYdA{EiCpFiDvW}ErUaN`SwM`_@gGv[iHbUsJvJqRfc@_IuDeM`EcLk@wFpGrWra@u^|Z}Eba@~DdJfJv@fLnS`@pM~KbDlAbQoGdN{CrH`EjDzQQhIaKpOvIfHxRjFdKmPcMqI{FxC`E}HlDhFhA_SdAoP`E}D`HdFnF~S{@tNzGfG~ScBdQt@xChIkChTaDrNkI_G|FrAzHpIzRxVqBxEtJnPyDlIVYwGhAyMfP}@tChE`^hYjIaB|QpLvHjLl@jPf@bF|CgE~GwLxF]{@rGqJ|KtPtR_@dGbIzDp@fDdCyGtAsWzGqCjEiTzIjAxAfM~GjN}@vG|E}Bc@`H|DtHjEkJjEyXn[rNtIgApBpJxDjLsCvH~EApIqClAiBe@oI`D}D~Eo@eF~GnHbQzG`QcCvJvGdHeIlM{@vFpHaBtMsAbDfNnDhCaAiF~FgIfKo@`@_LIuO~OjIDnJhDdJnFnKtF{MdBqK`J_EzGzDlJeDvKhClNo@dZvMvFTt@_G|K{@CtOhJ`@jTm@pUJ|OnLjEvG|GTpClTnA~RUzE|HyEtCwF" }
     // {latlng: [],
     //  date: '',
     //  title: '',
