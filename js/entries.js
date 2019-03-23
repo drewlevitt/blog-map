@@ -140,6 +140,7 @@ var entries = [
 // HOW TO OBTAIN A POLYLINE
 // Visit the following Google Maps Directions API endpoint (typical location strings given; default mode is driving):
 // https://maps.googleapis.com/maps/api/directions/json?origin=37.840455,-122.257520&destination=Universal+Studios+Hollywood&key=API_KEY
+// Don't forget to replace API_KEY with your API key (get one here https://developers.google.com/maps/documentation/directions/start#get-a-key)
 // Near the bottom, under "overview_polyline", copy the value associated with key "points"
 // Copy the whole string, including enclosing "", and leave any \ characters escaped with a second \
 // Replace the boilerplate '' with the copied string
