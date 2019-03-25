@@ -142,7 +142,15 @@ var entries = [
      url: 'https://www.schemebasedadventure.com/2019/03/08/mancora-in-three-photos/',
      corner1: [-4.112900, -81.067334],
      corner2: [-4.097192, -81.040224],
-     line: "lbtPjbfaNub@lJhGhZj@xv@pj@fPfoAlz@zyAp\\hgAdd@`{@xAbcAjXx\\qDbf@pCpu@mMn^zEjq@}Mbl@rAhl@q_@fcBeBtpAxBrhA`SjcCvv@z_@jl@t`Aj`AlbAvkAd_@hrA|s@`m@fGdf@xNwK~p@Ip[eL~JpP|SlYdg@~Rvb@a@`_@|\\iBr]}l@_c@oMfR{@|s@r`Ap`Ajs@jUrrAdn@|]|K}N|Wrw@fj@`|@b]pm@fLeLra@~t@ja@zb@jLjS`a@hz@le@sDrXj_@rQ`t@`v@kIdTtP|b@hnAlnAjp@bWrfAd}@fNt\\eEzbA}Szl@tAjx@rOvcAtb@hRmQj]`U~Ydm@lDdGb[|VnLsDpN_Yrq@zUdVrf@b[ja@sDjK~O|OdPgBd_@lu@ds@lk@|Vpw@\\jBny@db@|t@z]nNiMvPmr@cEj~@`Wzb@fO|H|_@zM~z@gZvcCq@xdA_e@hbAyWp~@eMdxAgdAzeA_O_FiFlKdAhe@w@v}@wW`hBcXd`ApHfZ{[nTro@fJcKlhAnRn~@gHjuAd`@jeAhEnwBlJjH_YbXiJng@eqAp]fq@vHda@kKfRvMol@rkAeWbo@uFdKla@kA`YxA~B`w@bXtNjDjg@cThYlPbR~Mru@j@fnAuFlz@hIrSiX`R`HtbAvd@h{@yAzpAnd@h`AsC`{@iChyAbQ~hBbq@djAhKbz@s@lu@l\\kEza@vHrM`]hc@t`AjNzfAjKhpAgJnnBwAjvAeG|Jrt@bs@zv@h~@bmCnmFpcDxbA|V`jAd`@~S`xCz`@v_Krf@ba@dnBpdBrpDv`Brj@vv@uNbLdt@}Rfj@eGro@tYfSpF~s@aRvW}eA|vAeq@nQw|A|~MkZtmB_vBdoAuuAdx@mAfp@zG~rCnzAdsAb[xdE}p@||@nCpeAdeAjpF~kBvkGht@jhArUhsAbf@hsF`pBpbBnR|E`~@ht@hy@zp@p^zmA`fAhlBpZbm@uCrs@wDpxBvr@buAxgAfxB~L|mBpn@ffAr|@`q@fv@djAt\\jWgGftAfBnz@ps@naAnNriAzhAbeBt}BrnD`Tlt@kBvn@~Rhy@~`@~d@`xBzkBv`@rcArdG|pBlyE`vAf_C`r@brBhRnt@nFp^|^js@`lAr~@vy@ht@~`Cx|@`{@f~@ruBteBn}Cz\\z_Ajj@h^rdAsIn}@ba@jw@l~@~Gte@liBt|@`l@dG~h@iTnr@w`AbcAse@xdByX|b@dm@zU|`Adz@bgChm@|jB~Uts@n|Bjx@ha@`qCrCxf@bOyC" }
+     line: "lbtPjbfaNub@lJhGhZj@xv@pj@fPfoAlz@zyAp\\hgAdd@`{@xAbcAjXx\\qDbf@pCpu@mMn^zEjq@}Mbl@rAhl@q_@fcBeBtpAxBrhA`SjcCvv@z_@jl@t`Aj`AlbAvkAd_@hrA|s@`m@fGdf@xNwK~p@Ip[eL~JpP|SlYdg@~Rvb@a@`_@|\\iBr]}l@_c@oMfR{@|s@r`Ap`Ajs@jUrrAdn@|]|K}N|Wrw@fj@`|@b]pm@fLeLra@~t@ja@zb@jLjS`a@hz@le@sDrXj_@rQ`t@`v@kIdTtP|b@hnAlnAjp@bWrfAd}@fNt\\eEzbA}Szl@tAjx@rOvcAtb@hRmQj]`U~Ydm@lDdGb[|VnLsDpN_Yrq@zUdVrf@b[ja@sDjK~O|OdPgBd_@lu@ds@lk@|Vpw@\\jBny@db@|t@z]nNiMvPmr@cEj~@`Wzb@fO|H|_@zM~z@gZvcCq@xdA_e@hbAyWp~@eMdxAgdAzeA_O_FiFlKdAhe@w@v}@wW`hBcXd`ApHfZ{[nTro@fJcKlhAnRn~@gHjuAd`@jeAhEnwBlJjH_YbXiJng@eqAp]fq@vHda@kKfRvMol@rkAeWbo@uFdKla@kA`YxA~B`w@bXtNjDjg@cThYlPbR~Mru@j@fnAuFlz@hIrSiX`R`HtbAvd@h{@yAzpAnd@h`AsC`{@iChyAbQ~hBbq@djAhKbz@s@lu@l\\kEza@vHrM`]hc@t`AjNzfAjKhpAgJnnBwAjvAeG|Jrt@bs@zv@h~@bmCnmFpcDxbA|V`jAd`@~S`xCz`@v_Krf@ba@dnBpdBrpDv`Brj@vv@uNbLdt@}Rfj@eGro@tYfSpF~s@aRvW}eA|vAeq@nQw|A|~MkZtmB_vBdoAuuAdx@mAfp@zG~rCnzAdsAb[xdE}p@||@nCpeAdeAjpF~kBvkGht@jhArUhsAbf@hsF`pBpbBnR|E`~@ht@hy@zp@p^zmA`fAhlBpZbm@uCrs@wDpxBvr@buAxgAfxB~L|mBpn@ffAr|@`q@fv@djAt\\jWgGftAfBnz@ps@naAnNriAzhAbeBt}BrnD`Tlt@kBvn@~Rhy@~`@~d@`xBzkBv`@rcArdG|pBlyE`vAf_C`r@brBhRnt@nFp^|^js@`lAr~@vy@ht@~`Cx|@`{@f~@ruBteBn}Cz\\z_Ajj@h^rdAsIn}@ba@jw@l~@~Gte@liBt|@`l@dG~h@iTnr@w`AbcAse@xdByX|b@dm@zU|`Adz@bgChm@|jB~Uts@n|Bjx@ha@`qCrCxf@bOyC" },
+    {latlng: [-12.138161, -77.020813],
+     date: 'March 10, 2019',
+     title: 'We Really Didn\'t Get to Know Lima At All',
+     location: 'Barranco, Lima, Per&uacute;',
+     url: 'https://www.schemebasedadventure.com/2019/03/10/we-really-didnt-get-to-know-lima-at-all/',
+     corner1: [-12.150581, -77.016356],
+     corner2: [-12.113914, -77.043487],
+     line: '' }
     // {latlng: [],
     //  date: '',
     //  title: '',
