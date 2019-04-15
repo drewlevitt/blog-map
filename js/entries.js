@@ -174,7 +174,15 @@ var entries = [
      url: 'https://www.schemebasedadventure.com/2019/03/17/inca-fitness/',
      corner1: [-13.114031, -72.324318],
      corner2: [-13.274135, -72.252052],
-     line: "nq|oAty`xL{@hEo@lDk@vAi@jC~BlEmArByFhFeG~FsBpAmBlDkHpKiDbFmDzU|@`KBnE}A|KiH~G_@|G{@jCuAnNoEjNcCtDcElA_JX{I~CoJjHqUvC_V|HsF~GuItBsEN}Do@aG{A_DIqDZ{Em@yNnGqVeEy@jAf@p@Sn@qC~B?tEq@XgB{CaDwFg@\\MnJe@OgBkFaCaC[JC^~@fAPxFc@RYmAi@kCeCoCuBw@eNaCkAo@Yf@fEjDDt@e@^yB{AaEqCaFqBuDi@sIkCaLyC_EsF}@FCl@fB~A_@NaHsH@x@xEzFBn@g@Oy@_B{BkAyBqAo@cByCqAgGi@qEaDc@PjF~E|CHjCzAc@XgB}@oECiBeAaE{BgEsAu@NbIjDhDdDpHpDbDjBS\\gPwFuDgC}IeAqCWyC}AyBwAm@}AwAwBsJmGsCq@Bf@tDfAzEzFv@nCk@DY_BaBuBeFmCoGW}@u@i@eE}@Nz@hE~DpCzFdBbBbC^rAUHqAcCiBgAmE]iImFyD}DyCaCaH}@cDqBe@a@g@XRj@dDhBvCp@xC|@d@r@cAKkFkAqIuAmGkBm@FE^p@ZfM`DlAvAUf@iBoBmPcCeH{@kAcBm@l@bAfAhEfArH`BrD~@`B|B]l@qDgDcGu@}RuC{FmI{CyEsFqAyBoHqBy@qG{@qHwE_@XjE~E~D~@dCfBjCfEAvAhD|C|@z@ItBmAlF]s@v@{DeAqAoGmJgDqC{F_BeIqDuEaCoHoB{H{Ey@aCKmBqDgA{AQGr@dEjCr@fAWXs@QqAmBuGyCcHcDDm@p@UnDbA`@[Oe@sGgAyE`AKi@dCqAxD]_@s@_Ff@cCrBeIfDDh@zCn@zCzE|B{@bEYlBVPb@UVuA[qCIkE`Dw@CsCoFoH_CsQkJF}ArAK~F^tDl@fFsAjBGdBq@fEiDtB}DfCuBWm@gBpAwBlDsDtC{CdAeDEgDx@kD{AqCG}HqBoDcAmPiB_JgCiCiE{@G]|@b@hCiBlDy@bD}CtDcE~CoQzVsEhGgJpIoKrD{LvCoBnAaFdB}KvEqHpBoAl@XrAnJjA~J{BlI}BpPgBbH{AvH|A|Bl@|A`CbCnDv@WVyDD}JjCgGxDsGdK}RxFeClAK@h@aDv@oC`BmAxCsGlQgC`FkB~GdBnJNbJeDpQaB~DkAM{BuCe@?Ej@lExEzBYdE_HXuEpAsDAsHEqKCiD|@mDxBmDtDuCfBgDRJaA`CeHbJ_@rInBlQWrL`ArI]tI{DjGsAvFaHpFmFlB" }
+     line: "nq|oAty`xL{@hEo@lDk@vAi@jC~BlEmArByFhFeG~FsBpAmBlDkHpKiDbFmDzU|@`KBnE}A|KiH~G_@|G{@jCuAnNoEjNcCtDcElA_JX{I~CoJjHqUvC_V|HsF~GuItBsEN}Do@aG{A_DIqDZ{Em@yNnGqVeEy@jAf@p@Sn@qC~B?tEq@XgB{CaDwFg@\\MnJe@OgBkFaCaC[JC^~@fAPxFc@RYmAi@kCeCoCuBw@eNaCkAo@Yf@fEjDDt@e@^yB{AaEqCaFqBuDi@sIkCaLyC_EsF}@FCl@fB~A_@NaHsH@x@xEzFBn@g@Oy@_B{BkAyBqAo@cByCqAgGi@qEaDc@PjF~E|CHjCzAc@XgB}@oECiBeAaE{BgEsAu@NbIjDhDdDpHpDbDjBS\\gPwFuDgC}IeAqCWyC}AyBwAm@}AwAwBsJmGsCq@Bf@tDfAzEzFv@nCk@DY_BaBuBeFmCoGW}@u@i@eE}@Nz@hE~DpCzFdBbBbC^rAUHqAcCiBgAmE]iImFyD}DyCaCaH}@cDqBe@a@g@XRj@dDhBvCp@xC|@d@r@cAKkFkAqIuAmGkBm@FE^p@ZfM`DlAvAUf@iBoBmPcCeH{@kAcBm@l@bAfAhEfArH`BrD~@`B|B]l@qDgDcGu@}RuC{FmI{CyEsFqAyBoHqBy@qG{@qHwE_@XjE~E~D~@dCfBjCfEAvAhD|C|@z@ItBmAlF]s@v@{DeAqAoGmJgDqC{F_BeIqDuEaCoHoB{H{Ey@aCKmBqDgA{AQGr@dEjCr@fAWXs@QqAmBuGyCcHcDDm@p@UnDbA`@[Oe@sGgAyE`AKi@dCqAxD]_@s@_Ff@cCrBeIfDDh@zCn@zCzE|B{@bEYlBVPb@UVuA[qCIkE`Dw@CsCoFoH_CsQkJF}ArAK~F^tDl@fFsAjBGdBq@fEiDtB}DfCuBWm@gBpAwBlDsDtC{CdAeDEgDx@kD{AqCG}HqBoDcAmPiB_JgCiCiE{@G]|@b@hCiBlDy@bD}CtDcE~CoQzVsEhGgJpIoKrD{LvCoBnAaFdB}KvEqHpBoAl@XrAnJjA~J{BlI}BpPgBbH{AvH|A|Bl@|A`CbCnDv@WVyDD}JjCgGxDsGdK}RxFeClAK@h@aDv@oC`BmAxCsGlQgC`FkB~GdBnJNbJeDpQaB~DkAM{BuCe@?Ej@lExEzBYdE_HXuEpAsDAsHEqKCiD|@mDxBmDtDuCfBgDRJaA`CeHbJ_@rInBlQWrL`ArI]tI{DjGsAvFaHpFmFlB" },
+    {latlng: [-13.155626, -72.522359],
+     date: 'March 19, 2019',
+     title: 'Machu Picchu: the South America Grand Finale',
+     location: 'Aguas Calientes, Urubamba, Cusco, Per&uacute;',
+     url: 'https://www.schemebasedadventure.com/2019/03/19/machu-picchu-the-south-america-grand-finale/',
+     corner1: [-13.145175, -72.556437],
+     corner2: [-13.174840, -72.520473],
+     line: '' }
     // {latlng: [],
     //  date: '',
     //  title: '',
