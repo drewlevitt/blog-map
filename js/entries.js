@@ -198,7 +198,15 @@ var entries = [
      url: 'https://www.schemebasedadventure.com/2019/04/08/visiting-sara-and-drew-in-mexico-city/',
      corner1: [19.351356, -99.117104],
      corner2: [19.439406, -99.198261],
-     line: "g_muBdne|QpB[@j@B`AJnAXtB^xATlATzAl@hCb@nBHV[F}Cf@g@HkJxAmLrBwU~DmMtBy@RcHhAmIxA}B^sAVgFz@gPpCcARWFFp@?x@RrATlB`@|CJNd@~BHp@~@zGzBxPTtAN`BSNEL_@V}@j@mChBkBhAuAz@iEnBiCjA}KjDcIdC_AXo@REOWw@EU?QLm@FWL@P?rC}@" }
+     line: "g_muBdne|QpB[@j@B`AJnAXtB^xATlATzAl@hCb@nBHV[F}Cf@g@HkJxAmLrBwU~DmMtBy@RcHhAmIxA}B^sAVgFz@gPpCcARWFFp@?x@RrATlB`@|CJNd@~BHp@~@zGzBxPTtAN`BSNEL_@V}@j@mChBkBhAuAz@iEnBiCjA}KjDcIdC_AXo@REOWw@EU?QLm@FWL@P?rC}@" },
+    {latlng: [21.001149, -101.243961],
+     date: 'April 19, 2019',
+     title: 'And so begins the Great Mexican Road Trip!',
+     location: 'Guanajuato, Guanajuato, M&eacute;xico',
+     url: 'https://www.schemebasedadventure.com/2019/04/19/and-so-begins-the-great-mexican-road-trip/',
+     corner1: [20.500224, -100.265865],
+     corner2: [21.245098, -101.452672],
+     line: "ctquBbqi|QtBo@a@zDiEpAsU|E{Q~JqI~JmGo@~@aA}@|M_Hf`@mNfMkAdP_Lpc@o^l`Aw`@vi@gOdJgeEleBcfADgm@c@a`@kNo~@{p@yiAcx@qaBy_Aof@oCoa@hAqVjMoYkDmc@{C{d@wNg[qOqb@i@eR{NyFqr@{KsL_n@dDguHxr@ydI|t@miKbaAs]tFsf@xYofBfcAkaBdl@ms@jj@iYlx@i]`iA_Sx\\yrAxiA_f@hn@eZ~nAkZbbBcOxh@oYja@i|@bv@oo@xJu{@v`@ce@Aeb@nd@ke@dbAm^p^mYtW}Uf^cy@zd@qZbP}Lt[gf@vgA}X~j@uLxe@gZ`[o]h[c\\ph@}e@pIg`@`Swi@~vCeh@jwCew@p}A_|B`nE}nBb|Gqu@bp@{o@nj@{\\h_@c[bQc`@ns@_c@~j@_Ipi@rBtr@jHf_AaCz_A{j@zcDqT`\\q{@jy@sP|JyQnQeO`h@oNdYoZja@s`@lb@cf@`QywA|e@w^dX{w@rt@skDvrC_`BrpAwyAr}A_jFz_HygA~xAyXzcAcq@pcC}h@n`Bif@~bAqPfUmBbe@Rdn@r[lxD|Pb`BpR~^v~A`aC_Bb_@kMvn@{cApkF_j@raHuuA`yC_O`vAeJpwAwDvgCw[lsAyZh_Aw[ve@yw@dbAoStu@_\\phB_Wvn@wKfiBk~@`zAeFjmAwEv]qu@rdAki@zd@iGhRgN`}BaLz[wp@h]qe@|c@}JjQFxc@tE~i@akA|rDqq@p|Bea@rnG_Txn@eaB~|C}Jrk@}Fj|Acg@tvDwOt_@}iB`gAacE`aCqrAnrAoiC~xCgGdOfG~[|AxxDA~|@aL`w@mU`{AhE|r@tLjhB_Xjm@m^`y@iLl~@ai@boCek@fhLeh@ttEsi@lbGea@v_IoYnbG{ZxfEuFlwCaE`gFaCfxCgA`_AwFrQiQxOceAnTckB`d@_v@|T{r@nlAq|AxvCoqBl{C_{@nmAuYje@_a@|eAunAjfDiL|Sa_@~Vam@b`@uq@zc@{`@pq@}p@bvA{_@bfAe\\|vAaQtDkv@mKsm@uFaVjAotBur@mzAuWwsA{PynBaWsZuCsY`Gm\\|Mug@b\\{c@bQid@~_@e|AhqBkaD~iEotAxiB_t@laAoW`Vu]L{NeJsw@urFePgx@{Fwi@Wmr@oYmeAyPcbAmN_c@Sek@uBqU_Y}h@kYey@wa@c]uR}ZcCqY~AaT~HgNgJoZg]e_@_f@aAgRcHgI{YyFyWD{^}GkLFE@GdCkJ|AsH|HBc@pAdGgCKaC" }
     // {latlng: [],
     //  date: '',
     //  title: '',
