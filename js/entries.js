@@ -286,7 +286,15 @@ var entries = [
      url: 'https://www.schemebasedadventure.com/2019/05/20/how-to-buy-two-used-touring-bikes-in-london-in-ten-easy-steps/',
      corner1: [51.525715, 0.100450],
      corner2: [51.563905, -0.502571],
-     line: "}rxyHptVdAdHu@l@}CdB}Ax@UZ[l@EbAFzH?P\\lAzCnKxAlGqLvI{C|BGD^zAbAhE`C`KbAlEt@nEB?DB@RCDrA`JtAlJhAvJPrA`@pBV~@oCnIkC|HaDdJeArDeE~L_B|EWn@BZBd@j@bB@b@Yh@_BrBi@r@Mh@i@lAEX?vAArCYlHCFKf@k@dIg@|Eq@pEqBjKo@vDAPeAtF_ApEo@`EkAxKe@xHKj@c@nHuAzVBNa@pI}@|PKhAeAnRiAbRo@tD{@nDo@xBg@tAuBrEeBtDKj@mAhDSx@WzAUtAAfAUtGAnAB`DTvFxBbPT`AFVl@bE`AdGzA~Dx@vA~@jAf@h@rA|@dLdFhDtA~@RrBTpBTjAZ|A`Av@n@~AfBxDlD`BfBrAdBz@rA`BxDjCrIhAzCp@vAzAdCvDhE|BvBpAjBbAzBp@pBh@~BXpB`@|D`ArKp@`FfAlFd@jBhGjTb@~Bb@xE`AhMh@`El@lDh@bChBlGvDdLlAnEfFbUl@hCx@lC~@xBv@rA`AtAdBdBj@d@pBhApDdBvChA`DjAfFhBrBh@~@JfAAt@IlFo@~@Sp@YfA}@j@_@r@Qn@?p@PdE`CpB|A^\\z@|@Zh@f@pA\\vAf@nDhAnNVvD`@pCPn@d@xAp@fAh@l@d@\\pFnDhEbDn@l@x@jAvAvDfBjFvBzGpChKx@pCnCzHfAdCbBnDlAlBfCbDdAhApAhApEvCpC|BjArAnAjBbBjDbAvC~@~DxAhG~BvHlFpN`EvJfC~EfAlBvCpE~GhKj@n@f@ZZF\\?jCg@dAGh@EFDJFNNJXDN[pDKhEOnCg@zFUpBQXg@xFi@fGQnCUzEI|DQjNS|D_@jE_BnPc@lEa@~Ge@vPQpFgBvYkBb\\KhF?hJEfNMbG[tHmAdPu@bMcAhLeBtNs@`FwApKm@fGo@dHe@~EqAvKkFv`@kDjYg@fFw@bLc@`HY~DsAdMaApGaBlIqAdGeCfKmCbKgF`TaBrH_BnHmBjJgEnTiCxNeAjJc@rGKxCOpHCjIDjI\\xMXbOBzLY|QsBbs@w@d\\aBnn@i@pJa@nE_@xC{@tF}@|D{@`DeBhFaA`CcBbE{BtG{A|F]dBe@jCUjBi@dFQlCe@rKa@`Li@zL]zEeAvI_AhFyBbJ}Gn[e@~BBNBPQnA{@zFm@fFS~Ac@~AHf@TPRBfAJLLJBLPDhBRtGRpAb@hAj@pA`D`GXt@ZjAb@xBf@fAv@jAR}@RuAj@iBZ{@V_@~@g@" }
+     line: "}rxyHptVdAdHu@l@}CdB}Ax@UZ[l@EbAFzH?P\\lAzCnKxAlGqLvI{C|BGD^zAbAhE`C`KbAlEt@nEB?DB@RCDrA`JtAlJhAvJPrA`@pBV~@oCnIkC|HaDdJeArDeE~L_B|EWn@BZBd@j@bB@b@Yh@_BrBi@r@Mh@i@lAEX?vAArCYlHCFKf@k@dIg@|Eq@pEqBjKo@vDAPeAtF_ApEo@`EkAxKe@xHKj@c@nHuAzVBNa@pI}@|PKhAeAnRiAbRo@tD{@nDo@xBg@tAuBrEeBtDKj@mAhDSx@WzAUtAAfAUtGAnAB`DTvFxBbPT`AFVl@bE`AdGzA~Dx@vA~@jAf@h@rA|@dLdFhDtA~@RrBTpBTjAZ|A`Av@n@~AfBxDlD`BfBrAdBz@rA`BxDjCrIhAzCp@vAzAdCvDhE|BvBpAjBbAzBp@pBh@~BXpB`@|D`ArKp@`FfAlFd@jBhGjTb@~Bb@xE`AhMh@`El@lDh@bChBlGvDdLlAnEfFbUl@hCx@lC~@xBv@rA`AtAdBdBj@d@pBhApDdBvChA`DjAfFhBrBh@~@JfAAt@IlFo@~@Sp@YfA}@j@_@r@Qn@?p@PdE`CpB|A^\\z@|@Zh@f@pA\\vAf@nDhAnNVvD`@pCPn@d@xAp@fAh@l@d@\\pFnDhEbDn@l@x@jAvAvDfBjFvBzGpChKx@pCnCzHfAdCbBnDlAlBfCbDdAhApAhApEvCpC|BjArAnAjBbBjDbAvC~@~DxAhG~BvHlFpN`EvJfC~EfAlBvCpE~GhKj@n@f@ZZF\\?jCg@dAGh@EFDJFNNJXDN[pDKhEOnCg@zFUpBQXg@xFi@fGQnCUzEI|DQjNS|D_@jE_BnPc@lEa@~Ge@vPQpFgBvYkBb\\KhF?hJEfNMbG[tHmAdPu@bMcAhLeBtNs@`FwApKm@fGo@dHe@~EqAvKkFv`@kDjYg@fFw@bLc@`HY~DsAdMaApGaBlIqAdGeCfKmCbKgF`TaBrH_BnHmBjJgEnTiCxNeAjJc@rGKxCOpHCjIDjI\\xMXbOBzLY|QsBbs@w@d\\aBnn@i@pJa@nE_@xC{@tF}@|D{@`DeBhFaA`CcBbE{BtG{A|F]dBe@jCUjBi@dFQlCe@rKa@`Li@zL]zEeAvI_AhFyBbJ}Gn[e@~BBNBPQnA{@zFm@fFS~Ac@~AHf@TPRBfAJLLJBLPDhBRtGRpAb@hAj@pA`D`GXt@ZjAb@xBf@fAv@jAR}@RuAj@iBZ{@V_@~@g@" },
+    {latlng: [51.613022, -2.527658],
+     date: 'May 21, 2019',
+     title: 'The Beginning of the Bike Tour',
+     location: 'Thornbury, South Gloucestershire, Gloucestershire, South West, England, United Kingdom',
+     url: 'https://www.schemebasedadventure.com/2019/05/21/the-beginning-of-the-bike-tour/',
+     corner1: [51.437822, -2.622972],
+     corner2: [51.623116, -2.504010],
+     line: '' }
     // {latlng: [],
     //  date: '',
     //  title: '',
