@@ -434,7 +434,7 @@ var entries = [
     {latlng: [47.026171, 4.849685],
      date: 'July 24, 2019',
      title: 'Marooned in Beaune',
-     location: '',
+     location: 'Beaune, C&ocirc;te-d\'Or, Bourgogne-Franche-Comt&eacute;, France',
      url: 'https://www.schemebasedadventure.com/2019/07/24/marooned-in-beaune/',
      corner1: [46.972069, 4.760404],
      corner2: [47.029258, 4.851568],
