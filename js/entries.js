@@ -430,7 +430,15 @@ var entries = [
      url: 'https://www.schemebasedadventure.com/2019/07/19/we-loved-la-loire-a-velo/',
      corner1: [47.136306, -0.164927],
      corner2: [47.945114, 1.960876],
-     line: "}`piH_muLzqaIbfbMy[h^aFtEqGsIfVauA|e@{oAda@qpAxPwuBpu@uzCpjAczEjJiA`c@jXvFaVj^etBrOch@fMwUaIgQyKwN|DtRtJySdIk\\rTy_Abt@}xAv^msArg@giDte@{hDvJqgA~Bkh@fMgK`YtLxCo^dNmhAhB_cA~Jud@r@_WuEcJeFTEGMLuAnNySrZiWjFob@iPgVwImVdB_`AnLcu@lYis@h@in@nQwgAfkA]ZPRNrA}FnLuNwAwKZ{G}RgL}bA{NebAk\\owA{e@qzAiSgz@_DsaA{UukBqa@mrA}Zuh@wYyYiR}b@_lA}uBcYsoAuDk\\gXgj@yy@s`Dcd@c`Ck_@cxDsXu|@_RsZkc@qq@e^a_@l@mRzQi[ImXoO__@}UsmAnDapA}ScaAgC}iAoEa\\iOcLuh@tRyKob@mIil@uHyRbEe[jJe^mA}ZaPcs@s@os@bEk{@qLgk@aSmZaMc|AiH}}BkNghArNk{AqIiOaLc@_\\cCcPdHaGwXkDcGuDuIuSvE{@gYu@cFqSioAgHqL_MdBFq}@iEa|A_PkpAyTyrB`HugAa@gvAbIiv@|ApQbDoLk[qx@\\iUfCOoEuk@|Ai`AfLsc@zIhG|AqJnEaa@pDkq@cFwP}B_QwJwBgFw@cAqZyFsX_Cep@hN{`@_TslCBicBgRocBcNixAeGqm@hAi]|DaOaGuj@uMkz@{Mqp@uDyF{PwYod@agAyu@acCsk@eaBmZagBqJqf@w[yw@yw@ueBeVc{A{QwlBaXmtBi[}lBss@seFmXqt@y]ioBsSccBu[w`AczAwr@miA_nAy`@{kAm`BobBawAceAap@_y@__@gy@md@ikAcF}Hl@cMh@_P{BkHcEiT_KqWyBkNyCeWxGwSn[ye@bGuBqCgUuEm`@Is[vGiEuAeVdImBgAePqGcg@{JoUo@uc@mKuSaVqdApIoIJwWqD{c@_XaxAvAop@`HcS_F{h@wZky@sXgXqv@y_BwXunAoPiCuBo]wAcKxAuShF?aAj@{GwGsEcXgFqDyPhFe_@u[eN{DeNtEm_@lGwV_Q}e@a\\qi@w^uc@qQmq@ug@o~@_y@gk@i`AcmBihDem@wtAmSggA_TuOa_@scAmx@}bBwm@yz@y}BiuC}vGcmJkrDchFe[m|@yYg_AKe`@wE}p@hCq`@v@qp@{WmJgMyQqWut@_L}nAuFyn@aFgg@fPsGuS}c@{KmhACUHcHnG}VReBfT__AkDqe@{Sme@hHwU|Lc_@RYf@oBdAqWNqOc@y@" }
+     line: "}`piH_muLzqaIbfbMy[h^aFtEqGsIfVauA|e@{oAda@qpAxPwuBpu@uzCpjAczEjJiA`c@jXvFaVj^etBrOch@fMwUaIgQyKwN|DtRtJySdIk\\rTy_Abt@}xAv^msArg@giDte@{hDvJqgA~Bkh@fMgK`YtLxCo^dNmhAhB_cA~Jud@r@_WuEcJeFTEGMLuAnNySrZiWjFob@iPgVwImVdB_`AnLcu@lYis@h@in@nQwgAfkA]ZPRNrA}FnLuNwAwKZ{G}RgL}bA{NebAk\\owA{e@qzAiSgz@_DsaA{UukBqa@mrA}Zuh@wYyYiR}b@_lA}uBcYsoAuDk\\gXgj@yy@s`Dcd@c`Ck_@cxDsXu|@_RsZkc@qq@e^a_@l@mRzQi[ImXoO__@}UsmAnDapA}ScaAgC}iAoEa\\iOcLuh@tRyKob@mIil@uHyRbEe[jJe^mA}ZaPcs@s@os@bEk{@qLgk@aSmZaMc|AiH}}BkNghArNk{AqIiOaLc@_\\cCcPdHaGwXkDcGuDuIuSvE{@gYu@cFqSioAgHqL_MdBFq}@iEa|A_PkpAyTyrB`HugAa@gvAbIiv@|ApQbDoLk[qx@\\iUfCOoEuk@|Ai`AfLsc@zIhG|AqJnEaa@pDkq@cFwP}B_QwJwBgFw@cAqZyFsX_Cep@hN{`@_TslCBicBgRocBcNixAeGqm@hAi]|DaOaGuj@uMkz@{Mqp@uDyF{PwYod@agAyu@acCsk@eaBmZagBqJqf@w[yw@yw@ueBeVc{A{QwlBaXmtBi[}lBss@seFmXqt@y]ioBsSccBu[w`AczAwr@miA_nAy`@{kAm`BobBawAceAap@_y@__@gy@md@ikAcF}Hl@cMh@_P{BkHcEiT_KqWyBkNyCeWxGwSn[ye@bGuBqCgUuEm`@Is[vGiEuAeVdImBgAePqGcg@{JoUo@uc@mKuSaVqdApIoIJwWqD{c@_XaxAvAop@`HcS_F{h@wZky@sXgXqv@y_BwXunAoPiCuBo]wAcKxAuShF?aAj@{GwGsEcXgFqDyPhFe_@u[eN{DeNtEm_@lGwV_Q}e@a\\qi@w^uc@qQmq@ug@o~@_y@gk@i`AcmBihDem@wtAmSggA_TuOa_@scAmx@}bBwm@yz@y}BiuC}vGcmJkrDchFe[m|@yYg_AKe`@wE}p@hCq`@v@qp@{WmJgMyQqWut@_L}nAuFyn@aFgg@fPsGuS}c@{KmhACUHcHnG}VReBfT__AkDqe@{Sme@hHwU|Lc_@RYf@oBdAqWNqOc@y@" },
+    {latlng: [47.026171, 4.849685],
+     date: 'July 24, 2019',
+     title: 'Marooned in Beaune',
+     location: '',
+     url: 'https://www.schemebasedadventure.com/2019/07/24/marooned-in-beaune/',
+     corner1: [46.972069, 4.760404],
+     corner2: [47.029258, 4.851568],
+     line: '' }
     // {latlng: [],
     //  date: '',
     //  title: '',
