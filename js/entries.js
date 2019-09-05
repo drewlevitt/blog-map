@@ -438,7 +438,15 @@ var entries = [
      url: 'https://www.schemebasedadventure.com/2019/07/24/marooned-in-beaune/',
      corner1: [46.972069, 4.760404],
      corner2: [47.029258, 4.851568],
-     line: '' }
+     line: '' },
+    {latlng: [43.297098, 5.536616],
+     date: 'July 26, 2019',
+     title: 'A Few Handsome Scenes from the South of France',
+     location: 'Aubagne, Bouches-du-Rh&ocirc;ne, Provence-Alpes-C&ocirc;te d\'Azur, France',
+     url: 'https://www.schemebasedadventure.com/2019/07/26/a-few-handsome-scenes-from-the-south-of-france/',
+     corner1: [43.102492, 4.350732],
+     corner2: [44.234267, 5.712147],
+     line: "sx_~Gker\\rg@~Oje@_PzIuBvCyBta@xH|Zyr@dxGbrCroD`wA`kDuM~eD~TxkDweAv|AcInyChc@dgDjg@ncDqhA|zHsbAp{FygAp}Akc@`mBsDzoAqd@teBcnC`~@_{@ln@gFf}Ax[|hA}e@fu@eoA|{@__@zvA`TnsArk@h|Dz`CnpBbhAp{B`g@xjD|w@laD|}@dlDldClhD|`AnnAruBz`C|o@daD|[vpCkbA`_En_AzaEh}A~sCjNpkGnj@|zArl@lnAtcAlyCh`@fzBzz@`aDba@hfCmx@vuCmF`}CvwBliB{dAtmBuiJ~y@gkAje@epBcc@iuCqM}dA|Uu~@n_AefD`iCkaBxmDsx@vcBwb@zrAtC|r@qIbaAyy@~t@lhDdf@x`Ap}AgtAlc@m]jkAlNreB`j@lp@zm@~i@hyCbPz~CdvD}WxxBbLhfC|vAxhErjCnsAbkApdCap@l~A{aBfoBacCdG_`Afa@s`@zkAk]niAfu@h_A|sAxmAdg@zyADhiDbXndCrVr{@{QfeBlsAtiA~s@bsAbGjh@oVpbAxO|sDac@rgCmEbuAkgAhfA`InuAigApxCyZp{BgqBddAic@r`@_|@zl@o^zx@zCn`Bq_AjzDmJncCop@rvB|yAnsBzUfpAj|@ndBgs@v`DtGtmDSfcCai@vgBqKnzB_g@h{BdcAzeCfW~uDzcAlsFfNzwEbxArgBplBp[h`BhnB|rBxaBpm@bnCjQtnBj@xcBmd@zdAgb@rhAnCj|D`^hlEcNzrFudBdbClTzyCnzB~uAxhBhdAnSzrCfMj`DjkA`aC`iBrcAz_@nnBtCfvDoa@bhEuRvkEqr@bwAjl@jeDlgCvlCxaAjdCk}Azy@qLj|@cu@~hA{kB|_B}gAjnE_eCd|B_}Cx]kiD~l@ysCbgA_~AbgCgv@|~CcTdv@tQdz@sVnpC}Bvy@lEd_De~@ntBsjAxvBcRpdDrCdv@aj@njAoc@hk@y_Chy@wqCzeAsqAjkAo`AtcAeiBl]crAfnAuhAjqCay@vhDeeEtcD_qA`|Ck^bt@g\\fmAbK~bD_I|gDevBnuE_{E|r@kfBdd@_rCzt@ccBtjA{lAxqAi{@jrAze@ls@rb@ta@_GpsC}kBpqCwPvy@|d@brAuGnhBemAxwCslDhjA_oCwKekDbBsx@rg@isAxdBoKxz@c|@tcCe]hiAgbA~aAocBl@ezBfPum@xa@uP`pCkMlmAgLeb@mtCeIy|Clb@qpDzTy{@cSwUkAiqAoa@_ZwYwF" }
     // {latlng: [],
     //  date: '',
     //  title: '',
