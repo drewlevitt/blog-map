@@ -1,90 +1,102 @@
 <html>
-    <head>
-        <title>When Map Met Blog&hellip;</title>
-        <link rel="shortcut icon" type="image/png" href="favicon.png"/>
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+
+<head>
+    <title>When Map Met Blog&hellip;</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
         integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
-        crossorigin=""/>
-        <style>
-            h1, h2, h3 {
-                line-height: 1.2;
-                font-family: 'Franklin Gothic Medium', Helvetica, Arial, sans-serif;
-            }
-            body {
-                padding: 0;
-                margin: 0;
-                line-height: 1.6;
-                font-size: 18px;
-                color: #444;
-                background-color: #eee;
-                font-family: Georgia, 'Times New Roman', Times, serif;
-            }
-            iframe {
-                border: none;
-                display: block;
-                width: 100%;
-                height: 100%;
-            }
-            #left {
-                position: relative;
-                float: left;
-                width: 50%;
-                height: 100%;
-                overflow: hidden;
-            }
-            #right {
-                overflow: hidden;
-            }
-            button {
-                font-family: 'Franklin Gothic', Helvetica, Arial, sans-serif;
-            }
-            #directions {
-                margin: 20px;
-            }
-            .info {
-                padding: 6px 8px;
-                font: 14px/16px 'Franklin Gothic', Helvetica, Arial, sans-serif;
-                background: white;
-                background: rgba(255,255,255,0.8);
-                box-shadow: 0 0 15px rgba(0,0,0,0.2);
-                border-radius: 5px;
-            }
-            .legend {
-                line-height: 18px;
-                color: #555;
-            }
-            .legend i {
-                width: 18px;
-                height: 18px;
-                float: left;
-                margin-right: 8px;
-                opacity: 0.7;
-            }
-            .leaflet-control-container {
-                font-family: 'Franklin Gothic', Helvetica, Arial, sans-serif;
-            }
-        </style>
-    </head>
+        crossorigin="" />
+    <style>
+        h1,
+        h2,
+        h3 {
+            line-height: 1.2;
+            font-family: 'Franklin Gothic Medium', Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            line-height: 1.6;
+            font-size: 18px;
+            color: #444;
+            background-color: #eee;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        iframe {
+            border: none;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        #left {
+            position: relative;
+            float: left;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #right {
+            overflow: hidden;
+        }
+
+        button {
+            font-family: 'Franklin Gothic', Helvetica, Arial, sans-serif;
+        }
+
+        #directions {
+            margin: 20px;
+        }
+
+        .info {
+            padding: 6px 8px;
+            font: 14px/16px 'Franklin Gothic', Helvetica, Arial, sans-serif;
+            background: white;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+
+        .legend {
+            line-height: 18px;
+            color: #555;
+        }
+
+        .legend i {
+            width: 18px;
+            height: 18px;
+            float: left;
+            margin-right: 8px;
+            opacity: 0.7;
+        }
+
+        .leaflet-control-container {
+            font-family: 'Franklin Gothic', Helvetica, Arial, sans-serif;
+        }
+    </style>
+</head>
+
 <body>
     <div id="left"></div>
     <div id="right"></div>
 
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
-    integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
-    crossorigin=""></script>
+        integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+        crossorigin=""></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="js/Leaflet.Geodesic.js" charset="UTF-8"></script> <!-- from https://github.com/henrythasler/Leaflet.Geodesic -->
+    <script src="js/Leaflet.Geodesic.js" charset="UTF-8"></script>
+    <!-- from https://github.com/henrythasler/Leaflet.Geodesic -->
     <script src="js/svg-icon.js"></script> <!-- from https://github.com/iatkin/leaflet-svgicon -->
     <script src="js/Polyline.encoded.js"></script> <!-- from https://github.com/jieter/Leaflet.encoded -->
     <script src="js/entries.js"></script> <!-- Load list of entries from external file -->
     <script>
         var map = L.map('left');
-        var watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
-            attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-            subdomains: 'abcd',
-            minZoom: 1,
+        var watercolor = L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.jpg', {
             maxZoom: 16,
-            ext: 'jpg'
+            attribution: '&copy; <a href="https://stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://stamen.com/" target="_blank">Stamen Design</a> &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>',
         });
         var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
@@ -93,19 +105,19 @@
         var satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
             attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
         });
-        var terrain = L.tileLayer('https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}{r}.png?apikey={apikey}', {
+        var terrain = L.tileLayer('https://tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey={apikey}', {
             attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-            apikey: '64ffd19e0e114a89aea336971c4d558e',
+            apikey: '9250cca7241d4d99b61dfb6e0eba115a',
             maxZoom: 22
         });
-        var spinal = L.tileLayer('https://{s}.tile.thunderforest.com/spinal-map/{z}/{x}/{y}{r}.png?apikey={apikey}', {
+        var spinal = L.tileLayer('https://tile.thunderforest.com/spinal-map/{z}/{x}/{y}.png?apikey={apikey}', {
             attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-            apikey: '64ffd19e0e114a89aea336971c4d558e', // be cool folks
+            apikey: '9250cca7241d4d99b61dfb6e0eba115a', // be cool folks
             maxZoom: 22
         });
         map.addLayer(watercolor);
 
-        var latest = d3.max(entries, function(d) { return new Date(d.date); }), // most recent blog entry date
+        var latest = d3.max(entries, function (d) { return new Date(d.date); }), // most recent blog entry date
             activeID = '', // we will populate this on marker click
             right = document.getElementById('right'),
             directions = `<div id="directions">
@@ -142,14 +154,14 @@
             myDate.setMonth(myDate.getMonth() + months);
             return myDate;
         }
-        
+
         var colorScale = d3.scaleLinear()
             .domain([addMonths(latest, -1), latest]) // Fade up from lightest to darkest starting a month before the latest entry
             .interpolate(d3.interpolateHcl)
             .clamp(true) // so that older entries don't fade to an even lighter shade
             .range([d3.rgb('#a1d99b'), d3.rgb('#00441b')]); // greens
-            // .range([d3.rgb('#fc8d59'), d3.rgb('#7f0000')]); // oranges
-        
+        // .range([d3.rgb('#fc8d59'), d3.rgb('#7f0000')]); // oranges
+
         if (entries.length > 1) { // If there are multiple entries, draw lines between consecutive entries
             var lines = [],
                 linesGroup = L.featureGroup();
@@ -160,27 +172,31 @@
                 } else { // or fall back to a crow-flies OD pair
                     var line = [entries[i - 1].latlng, entries[i].latlng];
                 };
-                lines.push({ latlngs: line, 
-                             date: entries[i].date, 
-                             startID: 'id' + (i - 1),
-                             endID: 'id' + i });
+                lines.push({
+                    latlngs: line,
+                    date: entries[i].date,
+                    startID: 'id' + (i - 1),
+                    endID: 'id' + i
+                });
             };
-            lines.forEach(function(d) {
+            lines.forEach(function (d) {
                 // one segment per 400km should be sufficient
-                let steps = Math.ceil(L.latLng(d.latlngs[0]).distanceTo(L.latLng(d.latlngs[1])) / 400000); 
-                L.geodesic([d.latlngs], { color: colorScale(new Date(d.date)), 
-                                          steps: steps, 
-                                          wrap: false, 
-                                          opacity: 0.75,
-                                          weight: 5,
-                                          startID: d.startID,
-                                          endID: d.endID })
-                    .on('click', function(e) {
+                let steps = Math.ceil(L.latLng(d.latlngs[0]).distanceTo(L.latLng(d.latlngs[1])) / 400000);
+                L.geodesic([d.latlngs], {
+                    color: colorScale(new Date(d.date)),
+                    steps: steps,
+                    wrap: false,
+                    opacity: 0.75,
+                    weight: 5,
+                    startID: d.startID,
+                    endID: d.endID
+                })
+                    .on('click', function (e) {
                         let targetID = '';
-                        if (e.target.options.startID == activeID) { targetID = e.target.options.endID; } 
+                        if (e.target.options.startID == activeID) { targetID = e.target.options.endID; }
                         else if (e.target.options.endID == activeID) { targetID = e.target.options.startID; };
 
-                        pointsGroup.eachLayer(function(marker) {
+                        pointsGroup.eachLayer(function (marker) {
                             if (marker.options.uniqueID == targetID) {
                                 marker.fire('click');
                             };
@@ -190,20 +206,24 @@
             });
             map.addLayer(linesGroup);
         };
-        
+
         var pointsGroup = L.featureGroup();
-        entries.forEach(function(d, i) {
-            var marker = new L.Marker.SVGMarker(d.latlng, { iconOptions: { color: colorScale.range()[1],
-                                                                           weight: 0,
-                                                                           fillColor: colorScale(new Date(d.date)), 
-                                                                           fillOpacity: 0.75,
-                                                                           circleRatio: 0 },
-                                                            uniqueID: 'id' + i,
-                                                            bounds: L.latLngBounds(L.latLng(d.corner1), L.latLng(d.corner2)) })
+        entries.forEach(function (d, i) {
+            var marker = new L.Marker.SVGMarker(d.latlng, {
+                iconOptions: {
+                    color: colorScale.range()[1],
+                    weight: 0,
+                    fillColor: colorScale(new Date(d.date)),
+                    fillOpacity: 0.75,
+                    circleRatio: 0
+                },
+                uniqueID: 'id' + i,
+                bounds: L.latLngBounds(L.latLng(d.corner1), L.latLng(d.corner2))
+            })
                 .bindTooltip("<strong>" + d.title + "</strong><br>" + d.location + "<br>" + d.date)
-                .on('click', function(e) { 
+                .on('click', function (e) {
                     right.innerHTML = "<iframe src='" + d.url + "'></iframe>"; // refresh right hand side
-                    
+
                     activeID = e.target.options.uniqueID; // set activeID for use with lines onclick
                     pointsGroup.setStyle({ iconOptions: { weight: 0 } }); // reset all marker outlines
                     marker.setStyle({ iconOptions: { weight: 4 } }); // highlight the clicked marker
@@ -211,9 +231,9 @@
                     // Lines can get too big and cover the map during flyTo - avoid this by temporarily removing them
                     let zoomDist = map.getBoundsZoom(e.target.options.bounds) - map.getZoom();
                     if (zoomDist > 5) {
-                        map.removeLayer(linesGroup); 
-                        map.once('moveend', function() {
-                            map.addLayer(linesGroup); 
+                        map.removeLayer(linesGroup);
+                        map.once('moveend', function () {
+                            map.addLayer(linesGroup);
                         });
                     };
 
@@ -221,7 +241,7 @@
                 })
                 .addTo(pointsGroup);
         });
-        
+
         map.addLayer(pointsGroup);
         map.fitBounds(pointsGroup.getBounds());//.pad(0.1));
 
@@ -234,12 +254,12 @@
         };
 
         L.control.layers(baseMaps).addTo(map);
-        var reset = L.control({position: 'bottomleft'});
-        reset.onAdd = function(map) {
+        var reset = L.control({ position: 'bottomleft' });
+        reset.onAdd = function (map) {
             var div = L.DomUtil.create('input');
             div.type = 'button';
             div.value = 'Show Directions';
-            div.onclick = function() {
+            div.onclick = function () {
                 pointsGroup.setStyle({ iconOptions: { weight: 0 } }); // reset all marker outlines
                 right.innerHTML = directions; // show the directions
             };
@@ -247,7 +267,7 @@
         };
         reset.addTo(map);
 
-        var legend = L.control({position: 'bottomright'});
+        var legend = L.control({ position: 'bottomright' });
         legend.onAdd = function (map) {
             var div = L.DomUtil.create('div', 'info legend'),
                 grades = [],
@@ -266,7 +286,8 @@
         };
         legend.addTo(map);
 
-        L.control.scale({maxWidth: 200, position: 'bottomleft'}).addTo(map);
-        </script>
+        L.control.scale({ maxWidth: 200, position: 'bottomleft' }).addTo(map);
+    </script>
 </body>
+
 </html>
